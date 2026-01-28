@@ -9,6 +9,7 @@ import {
 	ToggleControl,
 	Button,
 	Tooltip,
+	Notice,
 } from '@wordpress/components';
 
 import { Shortcut } from './shortcut';
@@ -18,6 +19,7 @@ import {
 	isCaseSensitive,
 	isSelectionInModal,
 	isWpVersionGreaterThanOrEqualTo,
+	escapeRegExp,
 } from './utils';
 
 import '../styles/app.scss';
@@ -38,7 +40,9 @@ const SearchReplaceForBlockEditor = (): JSX.Element => {
 	const [ searchInput, setSearchInput ] = useState< string >( '' );
 	const [ replaceInput, setReplaceInput ] = useState< string >( '' );
 	const [ caseSensitive, setCaseSensitive ] = useState< boolean >( false );
+	const [ useRegex, setUseRegex ] = useState< boolean >( false );
 	const [ context, setContext ] = useState< boolean >( false );
+	const [ error, setError ] = useState< string >( '' );
 
 	// Reference to the first field inside the modal.
 	const searchFieldRef = useRef< HTMLInputElement | null >( null );
@@ -63,6 +67,7 @@ const SearchReplaceForBlockEditor = (): JSX.Element => {
 			setReplacements( 0 );
 			setSearchInput( '' );
 			setReplaceInput( '' );
+			setError( '' );
 		}
 	};
 
@@ -92,6 +97,19 @@ const SearchReplaceForBlockEditor = (): JSX.Element => {
 	};
 
 	/**
+	 * Handle regex toggle and persist preference.
+	 *
+	 * @since 1.10.0
+	 *
+	 * @param {boolean} newValue
+	 * @return {void}
+	 */
+	const handleUseRegex = ( newValue: boolean ): void => {
+		setUseRegex( newValue );
+		persistRegexPreference( newValue );
+	};
+
+	/**
 	 * Listen for changes to input or case-sensitivity
 	 * and perform Searches only.
 	 *
@@ -102,7 +120,7 @@ const SearchReplaceForBlockEditor = (): JSX.Element => {
 	useEffect( () => {
 		replace();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [ searchInput, caseSensitive ] );
+	}, [ searchInput, caseSensitive, useRegex ] );
 
 	/**
 	 * Modal Focus.
@@ -122,6 +140,63 @@ const SearchReplaceForBlockEditor = (): JSX.Element => {
 	}, [ isModalVisible ] );
 
 	/**
+	 * Load persisted preference on first render.
+	 *
+	 * @since 1.10.0
+	 */
+	useEffect( () => {
+		setUseRegex( getPersistedRegexPreference() );
+	}, [] );
+
+	/**
+	 * Get regex preference from core/preferences.
+	 *
+	 * @since 1.10.0
+	 *
+	 * @return {boolean}
+	 */
+	const getPersistedRegexPreference = (): boolean => {
+		const scope = 'search-replace-for-block-editor';
+		const key = 'useRegex';
+
+		try {
+			const prefSelect = select( 'core/preferences' ) as any;
+			if ( prefSelect?.get ) {
+				const value = prefSelect.get( scope, key );
+				if ( typeof value === 'boolean' ) {
+					return value;
+				}
+			}
+		} catch ( e ) {
+			// Ignore preference store errors.
+		}
+
+		return false;
+	};
+
+	/**
+	 * Persist regex preference per user.
+	 *
+	 * @since 1.10.0
+	 *
+	 * @param {boolean} value
+	 * @return {void}
+	 */
+	const persistRegexPreference = ( value: boolean ): void => {
+		const scope = 'search-replace-for-block-editor';
+		const key = 'useRegex';
+
+		try {
+			const prefDispatch = dispatch( 'core/preferences' ) as any;
+			if ( prefDispatch?.set ) {
+				prefDispatch.set( scope, key, value );
+			}
+		} catch ( e ) {
+			// Ignore preference store errors.
+		}
+	};
+
+	/**
 	 * Handle the implementation for when the user
 	 * clicks the 'Replace' button.
 	 *
@@ -134,15 +209,26 @@ const SearchReplaceForBlockEditor = (): JSX.Element => {
 	const replace = ( status: boolean = false ): void => {
 		setContext( status );
 		setReplacements( 0 );
+		setError( '' );
 
 		if ( ! searchInput ) {
 			return;
 		}
 
-		const pattern: RegExp = new RegExp(
-			`(?<!<[^>]*)${ searchInput }(?<![^>]*<)`,
-			isCaseSensitive() || caseSensitive ? 'g' : 'gi'
-		);
+		const searchValue = useRegex ? searchInput : escapeRegExp( searchInput );
+		let pattern: RegExp;
+
+		try {
+			pattern = new RegExp(
+				`(?<!<[^>]*)${ searchValue }(?<![^>]*<)`,
+				isCaseSensitive() || caseSensitive ? 'g' : 'gi'
+			);
+		} catch ( err ) {
+			setError(
+				__( 'Invalid regular expression.', 'search-replace-for-block-editor' )
+			);
+			return;
+		}
 
 		select( 'core/block-editor' )
 			.getBlocks()
@@ -395,14 +481,29 @@ const SearchReplaceForBlockEditor = (): JSX.Element => {
 					<div id="search-replace-modal__toggle">
 						<ToggleControl
 							label={ __(
-								'Match Case | Expression',
+								'Match Case',
 								'search-replace-for-block-editor'
 							) }
 							checked={ caseSensitive }
 							onChange={ handleCaseSensitive }
 							__nextHasNoMarginBottom
 						/>
+						<ToggleControl
+							label={ __(
+								'Use Regular Expression',
+								'search-replace-for-block-editor'
+							) }
+							checked={ useRegex }
+							onChange={ handleUseRegex }
+							__nextHasNoMarginBottom
+						/>
 					</div>
+
+					{ error ? (
+						<Notice status="error" isDismissible={ false }>
+							{ error }
+						</Notice>
+					) : null }
 
 					{ replacements ? (
 						<div id="search-replace-modal__notification">

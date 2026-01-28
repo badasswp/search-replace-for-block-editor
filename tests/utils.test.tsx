@@ -364,6 +364,28 @@ describe( 'getFallbackTextBlocks', () => {
 	} );
 } );
 
+describe( 'escapeRegExp', () => {
+	beforeEach( () => {
+		jest.resetModules();
+	} );
+
+	it( 'escapeRegExp escapes regex metacharacters', () => {
+		const { escapeRegExp } = require( '../src/core/utils' );
+
+		const escaped = escapeRegExp( 'a.b+c*' );
+
+		expect( escaped ).toBe( 'a\\.b\\+c\\*' );
+	} );
+
+	it( 'escapeRegExp leaves plain text unchanged', () => {
+		const { escapeRegExp } = require( '../src/core/utils' );
+
+		const escaped = escapeRegExp( 'plain text' );
+
+		expect( escaped ).toBe( 'plain text' );
+	} );
+} );
+
 describe( 'getShortcutEvent', () => {
 	beforeEach( () => {
 		jest.resetModules();

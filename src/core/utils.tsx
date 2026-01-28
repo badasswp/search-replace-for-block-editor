@@ -335,6 +335,22 @@ export const getFallbackTextBlocks = (): string[] => {
 };
 
 /**
+ * Escape user input for safe literal RegExp usage.
+ *
+ * @since 1.10.0
+ *
+ * @param {string} value Raw user input.
+ * @return {string} Escaped input.
+ */
+export const escapeRegExp = ( value: string ): string => {
+	if ( typeof value !== 'string' ) {
+		return '';
+	}
+
+	return value.replace( /[.*+?^${}()|[\]\\]/g, '\\$&' );
+};
+
+/**
  * Get Shortcut Event.
  *
  * This function returns a Keyboard event for

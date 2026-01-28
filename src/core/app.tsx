@@ -153,7 +153,7 @@ const SearchReplaceForBlockEditor = (): JSX.Element => {
 	 *
 	 * @since 1.10.0
 	 *
-	 * @return {boolean}
+	 * @return {boolean} Whether regex is enabled.
 	 */
 	const getPersistedRegexPreference = (): boolean => {
 		const scope = 'search-replace-for-block-editor';
@@ -215,7 +215,9 @@ const SearchReplaceForBlockEditor = (): JSX.Element => {
 			return;
 		}
 
-		const searchValue = useRegex ? searchInput : escapeRegExp( searchInput );
+		const searchValue = useRegex
+			? searchInput
+			: escapeRegExp( searchInput );
 		let pattern: RegExp;
 
 		try {
@@ -225,7 +227,10 @@ const SearchReplaceForBlockEditor = (): JSX.Element => {
 			);
 		} catch ( err ) {
 			setError(
-				__( 'Invalid regular expression.', 'search-replace-for-block-editor' )
+				__(
+					'Invalid regular expression.',
+					'search-replace-for-block-editor'
+				)
 			);
 			return;
 		}

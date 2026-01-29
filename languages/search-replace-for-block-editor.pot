@@ -1,10 +1,11 @@
-# Copyright (C) badasswp
+# Copyright (C) 2026 badasswp
 # This file is distributed under the GPL v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Search and Replace for Block Editor\n"
-"POT-Creation-Date: 2024-07-2 00:00+0100\n"
-"PO-Revision-Date: 2024-07-2 00:00+0100\n"
+"Project-Id-Version: Search and Replace for Block Editor 1.9.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/search-and-replace\n"
+"POT-Creation-Date: 2026-01-29T09:23:52+00:00\n"
+"PO-Revision-Date: 2026-01-29T09:23:52+00:00\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -12,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Domain: search-replace-for-block-editor\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Poedit 3.4.1\n"
+"X-Generator: WP-CLI 2.12.0\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: search-replace-for-block-editor.php\n"
@@ -20,46 +21,57 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#. Plugin Name
+#. Plugin Name of the plugin
+#: search-replace-for-block-editor.php
 msgid "Search and Replace for Block Editor"
 msgstr ""
 
-#. Plugin URI
+#. Plugin URI of the plugin
+#: search-replace-for-block-editor.php
 msgid "https://github.com/badasswp/search-and-replace"
 msgstr ""
 
-#. Description
+#. Description of the plugin
+#: search-replace-for-block-editor.php
 msgid "Search and Replace text within the Block Editor."
 msgstr ""
 
-#. Author
+#. Author of the plugin
+#: search-replace-for-block-editor.php
 msgid "badasswp"
 msgstr ""
 
-#. Author URI
+#. Author URI of the plugin
+#: search-replace-for-block-editor.php
 msgid "https://github.com/badasswp"
 msgstr ""
 
-#: dist/app.js
+#. translators: Plugin directory path.
+#: search-replace-for-block-editor.php:32
+#, php-format
+msgid "Fatal Error: Composer not setup in %s"
+msgstr ""
+
+#: dist/app.js:1
 msgid "Search & Replace"
 msgstr ""
 
-#. Search
-msgid "Search"
+#: dist/app.js:1
+msgid "Invalid regular expression."
 msgstr ""
 
-#. Replace
-msgid "Replace"
+#: dist/app.js:1
+msgid "Match Case"
 msgstr ""
 
-#. Done
-msgid "Done"
+#: dist/app.js:1
+msgid "Use Regular Expression"
 msgstr ""
 
-#. dist/app.js
+#: dist/app.js:1
 msgid "item(s) replaced successfully"
 msgstr ""
 
-#. dist/app.js
-msgid "Match Case | Expression"
+#: dist/app.js:1
+msgid "item(s) found"
 msgstr ""

@@ -106,6 +106,7 @@ const SearchReplaceForBlockEditor = (): JSX.Element => {
 	 */
 	const handleUseRegex = ( newValue: boolean ): void => {
 		setUseRegex( newValue );
+		setError( '' );
 		persistRegexPreference( newValue );
 	};
 
@@ -226,11 +227,13 @@ const SearchReplaceForBlockEditor = (): JSX.Element => {
 				isCaseSensitive() || caseSensitive ? 'g' : 'gi'
 			);
 		} catch ( err ) {
+			const details =
+				err instanceof Error && err.message ? ` ${ err.message }` : '';
 			setError(
 				__(
 					'Invalid regular expression.',
 					'search-replace-for-block-editor'
-				)
+				) + details
 			);
 			return;
 		}
@@ -469,7 +472,10 @@ const SearchReplaceForBlockEditor = (): JSX.Element => {
 							label={ __( 'Search' ) }
 							value={ searchInput }
 							onChange={ ( value ) => setSearchInput( value ) }
-							placeholder="Lorem ipsum..."
+							placeholder={ __(
+								'Lorem ipsum…',
+								'search-replace-for-block-editor'
+							) }
 							__nextHasNoMarginBottom
 							__next40pxDefaultSize
 						/>

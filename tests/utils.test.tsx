@@ -372,9 +372,9 @@ describe( 'escapeRegExp', () => {
 	it( 'escapeRegExp escapes regex metacharacters', () => {
 		const { escapeRegExp } = require( '../src/core/utils' );
 
-		const escaped = escapeRegExp( 'a.b+c*' );
+		const escaped = escapeRegExp( 'a.b+c*^$()[]{}|\\' );
 
-		expect( escaped ).toBe( 'a\\.b\\+c\\*' );
+		expect( escaped ).toBe( 'a\\.b\\+c\\*\\^\\$\\(\\)\\[\\]\\{\\}\\|\\\\' );
 	} );
 
 	it( 'escapeRegExp leaves plain text unchanged', () => {
@@ -383,6 +383,18 @@ describe( 'escapeRegExp', () => {
 		const escaped = escapeRegExp( 'plain text' );
 
 		expect( escaped ).toBe( 'plain text' );
+	} );
+
+	it( 'escapeRegExp returns empty string for non-string inputs', () => {
+		const { escapeRegExp } = require( '../src/core/utils' );
+
+		expect( escapeRegExp( 123 ) ).toBe( '' );
+	} );
+
+	it( 'escapeRegExp returns empty string for empty input', () => {
+		const { escapeRegExp } = require( '../src/core/utils' );
+
+		expect( escapeRegExp( '' ) ).toBe( '' );
 	} );
 } );
 

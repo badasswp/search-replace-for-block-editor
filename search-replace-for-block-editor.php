@@ -3,7 +3,7 @@
  * Plugin Name: Search and Replace for Block Editor
  * Plugin URI:  https://github.com/badasswp/search-and-replace
  * Description: Search and Replace text within the Block Editor.
- * Version:     1.9.0
+ * Version:     1.10.0
  * Author:      badasswp
  * Author URI:  https://github.com/badasswp
  * License:     GPL v2 or later

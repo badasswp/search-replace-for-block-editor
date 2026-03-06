@@ -16,3 +16,5 @@ src
 tests
 bin
 phpcs.xml
+playwright.config.js
+playwright.setup.js

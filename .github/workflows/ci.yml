@@ -30,7 +30,7 @@ jobs:
 
       - name: Run Test Suites
         run: |
-          yarn test
+          yarn test:js
 
       - name: Set up PHP v8.2
         uses: shivammathur/setup-php@v2

@@ -41,8 +41,6 @@ export const SearchReplaceToolbarIcon = ( settings: any ): object => {
 								'Search & Replace',
 								'search-replace-for-block-editor'
 							) }
-							onPointerEnterCapture={ () => {} }
-							onPointerLeaveCapture={ () => {} }
 						/>
 					</ToolbarGroup>
 				</BlockControls>

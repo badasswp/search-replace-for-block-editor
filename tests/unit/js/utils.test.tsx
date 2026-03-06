@@ -11,7 +11,7 @@ describe( 'getAllowedBlocks', () => {
 	} );
 
 	it( 'getAllowedBlocks passes and returns default Text Blocks', () => {
-		const { getAllowedBlocks } = require( '../src/core/utils' );
+		const { getAllowedBlocks } = require( '../../../src/core/utils' );
 
 		const blocks = getAllowedBlocks();
 
@@ -45,7 +45,7 @@ describe( 'getAllowedBlocks', () => {
 			] ),
 		} ) );
 
-		const { getAllowedBlocks } = require( '../src/core/utils' );
+		const { getAllowedBlocks } = require( '../../../src/core/utils' );
 
 		const blocks = getAllowedBlocks();
 
@@ -76,7 +76,7 @@ describe( 'getTextBlocks', () => {
 			] ),
 		} ) );
 
-		const { getTextBlocks } = require( '../src/core/utils' );
+		const { getTextBlocks } = require( '../../../src/core/utils' );
 
 		const blocks = getTextBlocks();
 
@@ -105,7 +105,7 @@ describe( 'getTextBlocks', () => {
 			] ),
 		} ) );
 
-		const { getTextBlocks } = require( '../src/core/utils' );
+		const { getTextBlocks } = require( '../../../src/core/utils' );
 
 		const blocks = getTextBlocks();
 
@@ -117,7 +117,7 @@ describe( 'getTextBlocks', () => {
 			getBlockTypes: jest.fn( () => [] ),
 		} ) );
 
-		const { getTextBlocks } = require( '../src/core/utils' );
+		const { getTextBlocks } = require( '../../../src/core/utils' );
 
 		const blocks = getTextBlocks();
 
@@ -147,7 +147,7 @@ describe( 'getShortcut', () => {
 	} );
 
 	it( 'getShorcut passes and returns default Shortcut', () => {
-		const { getShortcut } = require( '../src/core/utils' );
+		const { getShortcut } = require( '../../../src/core/utils' );
 
 		const shortcut = getShortcut();
 
@@ -167,7 +167,7 @@ describe( 'getShortcut', () => {
 			applyFilters: jest.fn( () => ( { ...filter } ) ),
 		} ) );
 
-		const { getShortcut } = require( '../src/core/utils' );
+		const { getShortcut } = require( '../../../src/core/utils' );
 
 		const shortcut = getShortcut();
 
@@ -184,7 +184,7 @@ describe( 'getAppRoot', () => {
 	} );
 
 	it( 'getAppRoot returns an instance of HTMLDivElement', () => {
-		const { getAppRoot } = require( '../src/core/utils' );
+		const { getAppRoot } = require( '../../../src/core/utils' );
 
 		const parent: HTMLElement = document.createElement( 'div' );
 		const root = getAppRoot( parent );
@@ -201,7 +201,7 @@ describe( 'isSelectionModal', () => {
 	} );
 
 	it( 'isSelectionInModal returns false by default if Selection is not made', () => {
-		const { isSelectionInModal } = require( '../src/core/utils' );
+		const { isSelectionInModal } = require( '../../../src/core/utils' );
 
 		const status = isSelectionInModal();
 
@@ -216,7 +216,7 @@ describe( 'getBlockEditorIframe', () => {
 	} );
 
 	it( 'getBlockEditorIframe returns an instance of Document', () => {
-		const { getBlockEditorIframe } = require( '../src/core/utils' );
+		const { getBlockEditorIframe } = require( '../../../src/core/utils' );
 
 		const iframe = getBlockEditorIframe();
 
@@ -236,7 +236,7 @@ describe( 'isWpVersionGreaterThanOrEqualTo', () => {
 
 		const {
 			isWpVersionGreaterThanOrEqualTo,
-		} = require( '../src/core/utils' );
+		} = require( '../../../src/core/utils' );
 
 		const status = isWpVersionGreaterThanOrEqualTo( '6.7.0' );
 
@@ -251,7 +251,7 @@ describe( 'isWpVersionGreaterThanOrEqualTo', () => {
 
 		const {
 			isWpVersionGreaterThanOrEqualTo,
-		} = require( '../src/core/utils' );
+		} = require( '../../../src/core/utils' );
 
 		const status = isWpVersionGreaterThanOrEqualTo( '6.7.1' );
 
@@ -266,7 +266,7 @@ describe( 'isWpVersionGreaterThanOrEqualTo', () => {
 
 		const {
 			isWpVersionGreaterThanOrEqualTo,
-		} = require( '../src/core/utils' );
+		} = require( '../../../src/core/utils' );
 
 		const status = isWpVersionGreaterThanOrEqualTo( '6.7' );
 
@@ -281,7 +281,7 @@ describe( 'isWpVersionGreaterThanOrEqualTo', () => {
 
 		const {
 			isWpVersionGreaterThanOrEqualTo,
-		} = require( '../src/core/utils' );
+		} = require( '../../../src/core/utils' );
 
 		const status = isWpVersionGreaterThanOrEqualTo( '6.3.2' );
 
@@ -296,7 +296,7 @@ describe( 'isWpVersionGreaterThanOrEqualTo', () => {
 
 		const {
 			isWpVersionGreaterThanOrEqualTo,
-		} = require( '../src/core/utils' );
+		} = require( '../../../src/core/utils' );
 
 		const status = isWpVersionGreaterThanOrEqualTo( '6.3.2' );
 
@@ -307,7 +307,7 @@ describe( 'isWpVersionGreaterThanOrEqualTo', () => {
 	it( 'isWpVersionGreaterThanOrEqualTo returns false if param is not string', () => {
 		const {
 			isWpVersionGreaterThanOrEqualTo,
-		} = require( '../src/core/utils' );
+		} = require( '../../../src/core/utils' );
 
 		const status = isWpVersionGreaterThanOrEqualTo( 7 );
 
@@ -322,7 +322,7 @@ describe( 'getNumberToBase10', () => {
 	} );
 
 	it( 'getNumberToBase10 returns the correct Radix', () => {
-		const { getNumberToBase10 } = require( '../src/core/utils' );
+		const { getNumberToBase10 } = require( '../../../src/core/utils' );
 
 		const radix = getNumberToBase10( [ 5, 6, 1 ] );
 
@@ -331,7 +331,7 @@ describe( 'getNumberToBase10', () => {
 	} );
 
 	it( 'getNumberToBase10 receives non-array param and returns zero', () => {
-		const { getNumberToBase10 } = require( '../src/core/utils' );
+		const { getNumberToBase10 } = require( '../../../src/core/utils' );
 
 		const radix = getNumberToBase10( 'non-array' );
 
@@ -340,7 +340,7 @@ describe( 'getNumberToBase10', () => {
 	} );
 
 	it( 'getNumberToBase10 receives mixed array type and returns zero', () => {
-		const { getNumberToBase10 } = require( '../src/core/utils' );
+		const { getNumberToBase10 } = require( '../../../src/core/utils' );
 
 		const radix = getNumberToBase10( [ 1, 'zero', 2 ] );
 
@@ -355,7 +355,7 @@ describe( 'getFallbackTextBlocks', () => {
 	} );
 
 	it( 'getFallbackTextBlocks gets array of default fallback text blocks', () => {
-		const { getFallbackTextBlocks } = require( '../src/core/utils' );
+		const { getFallbackTextBlocks } = require( '../../../src/core/utils' );
 
 		const fallbackTextBlocks = getFallbackTextBlocks();
 
@@ -370,7 +370,7 @@ describe( 'getShortcutEvent', () => {
 	} );
 
 	it( 'getShorcutEvent returns the instance of a Keyboard Event', () => {
-		const { getShortcutEvent } = require( '../src/core/utils' );
+		const { getShortcutEvent } = require( '../../../src/core/utils' );
 
 		const shortcutEvent = getShortcutEvent();
 

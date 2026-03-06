@@ -6,7 +6,7 @@ describe( 'search-replace-for-block-editor.allowedBlocks', () => {
 			} ),
 		} ) );
 
-		jest.doMock( '../src/core/utils', () => ( {
+		jest.doMock( '../../../src/core/utils', () => ( {
 			getTextBlocks: jest.fn( () => {
 				return [
 					'core/paragraph',
@@ -16,7 +16,7 @@ describe( 'search-replace-for-block-editor.allowedBlocks', () => {
 			} ),
 			getAllowedBlocks: jest.fn( () => {
 				const { applyFilters } = require( '@wordpress/hooks' );
-				const { getTextBlocks } = require( '../src/core/utils' );
+				const { getTextBlocks } = require( '../../../src/core/utils' );
 				return applyFilters(
 					'search-replace-for-block-editor.allowedBlocks',
 					getTextBlocks()
@@ -24,7 +24,7 @@ describe( 'search-replace-for-block-editor.allowedBlocks', () => {
 			} ),
 		} ) );
 
-		const { getAllowedBlocks } = require( '../src/core/utils' );
+		const { getAllowedBlocks } = require( '../../../src/core/utils' );
 		const blocks = getAllowedBlocks();
 		expect( blocks ).toEqual( [
 			'core/paragraph',
@@ -42,7 +42,7 @@ describe( 'search-replace-for-block-editor.allowedBlocks', () => {
 			} ),
 		} ) );
 
-		jest.doMock( '../src/core/utils', () => ( {
+		jest.doMock( '../../../src/core/utils', () => ( {
 			getTextBlocks: jest.fn( () => {
 				return [
 					'core/paragraph',
@@ -52,7 +52,7 @@ describe( 'search-replace-for-block-editor.allowedBlocks', () => {
 			} ),
 			getAllowedBlocks: jest.fn( () => {
 				const { applyFilters } = require( '@wordpress/hooks' );
-				const { getTextBlocks } = require( '../src/core/utils' );
+				const { getTextBlocks } = require( '../../../src/core/utils' );
 				return applyFilters(
 					'search-replace-for-block-editor.allowedBlocks',
 					getTextBlocks()
@@ -60,7 +60,7 @@ describe( 'search-replace-for-block-editor.allowedBlocks', () => {
 			} ),
 		} ) );
 
-		const { getAllowedBlocks } = require( '../src/core/utils' );
+		const { getAllowedBlocks } = require( '../../../src/core/utils' );
 		const blocks = getAllowedBlocks();
 		expect( blocks ).toEqual( [] );
 		expect( blocks.length ).toEqual( 0 );
@@ -68,7 +68,7 @@ describe( 'search-replace-for-block-editor.allowedBlocks', () => {
 
 	afterEach( () => {
 		jest.unmock( '@wordpress/hooks' );
-		jest.unmock( '../src/core/utils' );
+		jest.unmock( '../../../src/core/utils' );
 		jest.resetModules();
 	} );
 } );
@@ -79,7 +79,7 @@ describe( 'search-replace-for-block-editor.keyboardShortcut', () => {
 			applyFilters: jest.fn( ( hook: string, arg: object ) => arg ),
 		} ) );
 
-		const { getShortcut } = require( '../src/core/utils' );
+		const { getShortcut } = require( '../../../src/core/utils' );
 		const shortcut = getShortcut();
 		expect( shortcut ).toStrictEqual( {
 			character: 'f',
@@ -94,7 +94,7 @@ describe( 'search-replace-for-block-editor.keyboardShortcut', () => {
 			} ),
 		} ) );
 
-		const { getShortcut } = require( '../src/core/utils' );
+		const { getShortcut } = require( '../../../src/core/utils' );
 		const shortcut = getShortcut();
 		expect( shortcut ).toStrictEqual( {
 			character: 'j',
@@ -104,7 +104,7 @@ describe( 'search-replace-for-block-editor.keyboardShortcut', () => {
 
 	afterEach( () => {
 		jest.unmock( '@wordpress/hooks' );
-		jest.unmock( '../src/core/utils' );
+		jest.unmock( '../../../src/core/utils' );
 		jest.resetModules();
 	} );
 } );

@@ -5,6 +5,7 @@ namespace SearchReplaceForBlockEditor\Tests\Services;
 use WP_Mock;
 use Mockery;
 use WP_Screen;
+use ReflectionClass;
 use Badasswp\WPMockTC\WPMockTestCase;
 
 use SearchReplaceForBlockEditor\Services\Admin;
@@ -161,7 +162,7 @@ class AdminTest extends WPMockTestCase {
 		WP_Mock::userFunction( 'get_current_screen' )
 			->andReturn( $screen );
 
-		$reflection = new \ReflectionClass( Admin::class );
+		$reflection = new ReflectionClass( Admin::class );
 
 		WP_Mock::userFunction( 'plugin_dir_url' )
 			->with( $reflection->getFileName() )

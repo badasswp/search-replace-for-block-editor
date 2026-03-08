@@ -4,6 +4,7 @@ namespace SearchReplaceForBlockEditor\Tests\Admin;
 
 use WP_Mock;
 use Mockery;
+use ReflectionClass;
 use WP_Mock\Tools\TestCase;
 
 use SearchReplaceForBlockEditor\Admin\Form;
@@ -34,7 +35,7 @@ class FormTest extends TestCase {
 		$this->form = Mockery::mock( Form::class )->makePartial();
 		$this->form->shouldAllowMockingProtectedMethods();
 
-		$reflection = new \ReflectionClass( $this->form );
+		$reflection = new ReflectionClass( $this->form );
 		$property   = $reflection->getProperty( 'options' );
 		if ( method_exists( $property, 'setAccessible' ) ) {
 			$property->setAccessible( true );

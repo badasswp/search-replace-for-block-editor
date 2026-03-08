@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.10.0
+* Test: Add e2e tests for plugin codebase.
+* Tested up to WP 6.9.
+
 ## 1.9.0
 * Feat: Use Composer setup for plugin.
 * Tested up to WP 6.9.

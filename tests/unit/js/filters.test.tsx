@@ -83,7 +83,7 @@ describe( 'search-replace-for-block-editor.keyboardShortcut', () => {
 		const shortcut = getShortcut();
 		expect( shortcut ).toStrictEqual( {
 			character: 'f',
-			modifier: 'primaryShift',
+			modifier: 'primary',
 		} );
 	} );
 
@@ -98,7 +98,7 @@ describe( 'search-replace-for-block-editor.keyboardShortcut', () => {
 		const shortcut = getShortcut();
 		expect( shortcut ).toStrictEqual( {
 			character: 'j',
-			modifier: 'primaryShift',
+			modifier: 'primary',
 		} );
 	} );
 

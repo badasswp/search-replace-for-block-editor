@@ -352,7 +352,6 @@ export const getShortcutEvent = (): KeyboardEvent => {
 		code: 'KeyF',
 		keyCode: 70,
 		charCode: 70,
-		shiftKey: true,
 		metaKey: true,
 		ctrlKey: navigator.platform.includes( 'Mac' ) ? false : true,
 		bubbles: true,

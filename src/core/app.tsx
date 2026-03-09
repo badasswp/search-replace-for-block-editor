@@ -33,15 +33,27 @@ import '../styles/app.scss';
  * @return {JSX.Element} Search & Replace for Block Editor.
  */
 const SearchReplaceForBlockEditor = (): JSX.Element => {
+	const {
+		isShortcutEnabled,
+		isCaseMatchingEnabled,
+		isRegexMatchingEnabled,
+		isCloseModalEnabled,
+		isSavePostEnabled,
+	} = srfbe;
+
 	const [ replacements, setReplacements ] = useState< number >( 0 );
 	const [ isModalVisible, setIsModalVisible ] = useState< boolean >( false );
+	const [ context, setContext ] = useState< boolean >( false );
 	const [ searchInput, setSearchInput ] = useState< string >( '' );
 	const [ replaceInput, setReplaceInput ] = useState< string >( '' );
-	const [ isCaseSensitive, setIsCaseSensitive ] =
-		useState< boolean >( false );
-	const [ isRegexExpression, setIsRegexExpression ] =
-		useState< boolean >( false );
-	const [ context, setContext ] = useState< boolean >( false );
+
+	// Toggles.
+	const [ isCaseSensitive, setIsCaseSensitive ] = useState< boolean >(
+		isCaseMatchingEnabled
+	);
+	const [ isRegexExpression, setIsRegexExpression ] = useState< boolean >(
+		isRegexMatchingEnabled
+	);
 
 	// Reference to the first field inside the modal.
 	const searchFieldRef = useRef< HTMLInputElement | null >( null );
@@ -166,6 +178,24 @@ const SearchReplaceForBlockEditor = (): JSX.Element => {
 			.forEach( ( element: any ) => {
 				recursivelyReplace( element, pattern, replaceInput, status );
 			} );
+
+		if ( status && isSavePostEnabled ) {
+			( dispatch( 'core/editor' ) as any ).savePost();
+		}
+
+		if ( status && isCloseModalEnabled ) {
+			closeModal();
+
+			// Let the user know, since you're closing the modal.
+			( dispatch( 'core/notices' ) as any ).createSuccessNotice(
+				`${ replacements } item(s) replaced successfully.`,
+				{
+					id: 'srfbe-id',
+					isDismissible: true,
+					type: 'default',
+				}
+			);
+		}
 	};
 
 	/**
@@ -356,10 +386,18 @@ const SearchReplaceForBlockEditor = (): JSX.Element => {
 	 * @since 1.4.0
 	 * @return {JSX.Element|null} Shortcut.
 	 */
-	const SafeShortcut = (): JSX.Element | null =>
-		isWpVersionGreaterThanOrEqualTo( '6.4.0' ) ? (
-			<Shortcut onKeyDown={ openModal } />
-		) : null;
+	const SafeShortcut = (): JSX.Element | null => {
+		if ( ! isWpVersionGreaterThanOrEqualTo( '6.4.0' ) ) {
+			return null;
+		}
+
+		// Enable by default (set true, if null).
+		if ( isShortcutEnabled || null === isShortcutEnabled ) {
+			return <Shortcut onKeyDown={ openModal } />;
+		}
+
+		return null;
+	};
 
 	return (
 		<>

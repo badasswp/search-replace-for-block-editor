@@ -15,8 +15,6 @@ use SearchReplaceForBlockEditor\Admin\Options;
  * @covers \SearchReplaceForBlockEditor\Admin\Options::get_form_fields
  */
 class OptionsTest extends WPMockTestCase {
-	public $providers;
-
 	public function setUp(): void {
 		parent::setUp();
 	}

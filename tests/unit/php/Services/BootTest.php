@@ -77,10 +77,14 @@ class BootTest extends WPMockTestCase {
 			->with( $boot->getFileName() )
 			->andReturn( '/var/www/wp-content/plugins/search-replace-for-block-editor/inc/Services/' );
 
+		WP_Mock::userFunction( 'plugins_url' )
+			->with( 'search-replace-for-block-editor/dist/app.js' )
+			->andReturn( 'https://example.com/wp-content/plugins/search-replace-for-block-editor/dist/app.js' );
+
 		WP_Mock::userFunction( 'wp_enqueue_script' )
 			->with(
 				'search-replace-for-block-editor',
-				'https://example.com/wp-content/inc/Services/Boot.php/../../dist/app.js',
+				'https://example.com/wp-content/plugins/search-replace-for-block-editor/dist/app.js',
 				[
 					'wp-i18n',
 					'wp-element',
@@ -95,17 +99,6 @@ class BootTest extends WPMockTestCase {
 				'1750321560',
 				false,
 			);
-
-		WP_Mock::userFunction( 'trailingslashit' )
-			->andReturnUsing(
-				function ( $arg ) {
-					return sprintf( '%s%s', $arg, '/' );
-				}
-			);
-
-		WP_Mock::userFunction( 'plugin_dir_url' )
-			->with( $boot->getFileName() )
-			->andReturn( 'https://example.com/wp-content/inc/Services/Boot.php' );
 
 		WP_Mock::userFunction( 'wp_set_script_translations' )
 			->with(

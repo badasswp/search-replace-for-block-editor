@@ -72,11 +72,18 @@ class Boot extends Service implements Kernel {
 			plugin_dir_path( __FILE__ ) . '../../languages'
 		);
 
+		$srfbe = get_option( Options::get_page_option(), [] );
+
 		wp_localize_script(
 			Options::get_page_slug(),
 			'srfbe',
 			[
-				'wpVersion' => $wp_version,
+				'wpVersion'              => $wp_version,
+				'isShortcutEnabled'      => $srfbe['use_shortcut'] ?? null,
+				'isCaseMatchingEnabled'  => $srfbe['case_matching'] ?? null,
+				'isRegexMatchingEnabled' => $srfbe['regex_matching'] ?? null,
+				'isCloseModalEnabled'    => $srfbe['close_modal'] ?? null,
+				'isSavePostEnabled'      => $srfbe['save_post'] ?? null,
 			]
 		);
 	}

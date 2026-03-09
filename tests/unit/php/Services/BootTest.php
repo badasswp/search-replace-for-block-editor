@@ -107,12 +107,21 @@ class BootTest extends WPMockTestCase {
 				'/var/www/wp-content/plugins/search-replace-for-block-editor/inc/Services/../../languages',
 			);
 
+		WP_Mock::userFunction( 'get_option' )
+			->with( 'search_replace_for_block_editor', [] )
+			->andReturn( null );
+
 		WP_Mock::userFunction( 'wp_localize_script' )
 			->with(
 				'search-replace-for-block-editor',
 				'srfbe',
 				[
-					'wpVersion' => '6.9.1',
+					'wpVersion'              => '6.9.1',
+					'isShortcutEnabled'      => null,
+					'isCaseMatchingEnabled'  => null,
+					'isRegexMatchingEnabled' => null,
+					'isCloseModalEnabled'    => null,
+					'isSavePostEnabled'      => null,
 				]
 			)
 			->andReturn( null );

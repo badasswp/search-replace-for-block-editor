@@ -153,7 +153,7 @@ describe( 'getShortcut', () => {
 
 		expect( shortcut ).toEqual( {
 			character: 'f',
-			modifier: 'primaryShift',
+			modifier: 'primary',
 		} );
 	} );
 

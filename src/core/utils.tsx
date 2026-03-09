@@ -40,11 +40,13 @@ export const getAllowedBlocks = (): string[] => {
  * @return {string[]} List of Text Blocks.
  */
 export const getTextBlocks = (): string[] => {
+	type BlockType = ReturnType< typeof getBlockTypes >[ number ];
+
 	const textBlocks = getBlockTypes()
-		.filter( ( block ) => {
+		.filter( ( block: BlockType ) => {
 			return !! ( block?.category === 'text' );
 		} )
-		.map( ( block ) => {
+		.map( ( block: BlockType ) => {
 			return block?.name;
 		} );
 
@@ -90,7 +92,7 @@ export const getShortcut = (): { modifier: string; character: string } => {
 	 */
 	return applyFilters(
 		'search-replace-for-block-editor.keyboardShortcut',
-		options.SHIFT
+		options.CMD
 	) as { modifier: string; character: string };
 };
 
@@ -350,7 +352,6 @@ export const getShortcutEvent = (): KeyboardEvent => {
 		code: 'KeyF',
 		keyCode: 70,
 		charCode: 70,
-		shiftKey: true,
 		metaKey: true,
 		ctrlKey: navigator.platform.includes( 'Mac' ) ? false : true,
 		bubbles: true,

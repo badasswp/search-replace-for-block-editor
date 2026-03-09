@@ -104,7 +104,7 @@ export const getShortcut = (): { modifier: string; character: string } => {
  *
  * @return {boolean} Is Case Sensitive.
  */
-export const isCaseSensitive = (): boolean => {
+export const ifIsCaseSensitiveBasedOnFilter = (): boolean => {
 	/**
 	 * Filter Case Sensitivity.
 	 *

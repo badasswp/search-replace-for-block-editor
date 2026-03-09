@@ -15,7 +15,7 @@ import { Shortcut } from './shortcut';
 import {
 	getAllowedBlocks,
 	getBlockEditorIframe,
-	isCaseSensitive,
+	ifIsCaseSensitiveBasedOnFilter,
 	isSelectionInModal,
 	isWpVersionGreaterThanOrEqualTo,
 } from './utils';
@@ -37,7 +37,10 @@ const SearchReplaceForBlockEditor = (): JSX.Element => {
 	const [ isModalVisible, setIsModalVisible ] = useState< boolean >( false );
 	const [ searchInput, setSearchInput ] = useState< string >( '' );
 	const [ replaceInput, setReplaceInput ] = useState< string >( '' );
-	const [ caseSensitive, setCaseSensitive ] = useState< boolean >( false );
+	const [ isCaseSensitive, setIsCaseSensitive ] =
+		useState< boolean >( false );
+	const [ isRegexExpression, setIsRegexExpression ] =
+		useState< boolean >( false );
 	const [ context, setContext ] = useState< boolean >( false );
 
 	// Reference to the first field inside the modal.
@@ -87,8 +90,22 @@ const SearchReplaceForBlockEditor = (): JSX.Element => {
 	 * @param {boolean} newValue
 	 * @return {void}
 	 */
-	const handleCaseSensitive = ( newValue: boolean ): void => {
-		setCaseSensitive( newValue );
+	const handleCaseToggle = ( newValue: boolean ): void => {
+		setIsCaseSensitive( newValue );
+	};
+
+	/**
+	 * Handle regex-expression toggle feature
+	 * to enable user perform regex-enabled search
+	 * and replacements.
+	 *
+	 * @since 1.10.0
+	 *
+	 * @param {boolean} newValue
+	 * @return {void}
+	 */
+	const handleRegexToggle = ( newValue: boolean ): void => {
+		setIsRegexExpression( newValue );
 	};
 
 	/**
@@ -102,7 +119,7 @@ const SearchReplaceForBlockEditor = (): JSX.Element => {
 	useEffect( () => {
 		replace();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [ searchInput, caseSensitive ] );
+	}, [ searchInput, isCaseSensitive, isRegexExpression ] );
 
 	/**
 	 * Modal Focus.
@@ -141,7 +158,7 @@ const SearchReplaceForBlockEditor = (): JSX.Element => {
 
 		const pattern: RegExp = new RegExp(
 			`(?<!<[^>]*)${ searchInput }(?<![^>]*<)`,
-			isCaseSensitive() || caseSensitive ? 'g' : 'gi'
+			ifIsCaseSensitiveBasedOnFilter() || isCaseSensitive ? 'g' : 'gi'
 		);
 
 		select( 'core/block-editor' )
@@ -395,11 +412,20 @@ const SearchReplaceForBlockEditor = (): JSX.Element => {
 					<div id="search-replace-modal__toggle">
 						<ToggleControl
 							label={ __(
-								'Match Case | Expression',
+								'Match case',
 								'search-replace-for-block-editor'
 							) }
-							checked={ caseSensitive }
-							onChange={ handleCaseSensitive }
+							checked={ isCaseSensitive }
+							onChange={ handleCaseToggle }
+							__nextHasNoMarginBottom
+						/>
+						<ToggleControl
+							label={ __(
+								'Use regular expression',
+								'search-replace-for-block-editor'
+							) }
+							checked={ isRegexExpression }
+							onChange={ handleRegexToggle }
 							__nextHasNoMarginBottom
 						/>
 					</div>

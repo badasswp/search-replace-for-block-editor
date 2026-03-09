@@ -64,6 +64,7 @@ Want to add your personal touch? All of our documentation can be found [here](ht
 == Changelog ==
 
 = 1.10.0 =
+* Feat: Add toggle for Regex expression matching.
 * Feat: Add Plugin options page.
 * Feat: Add Shortcut command (CMD + F).
 * Test: Add e2e tests for plugin codebase.

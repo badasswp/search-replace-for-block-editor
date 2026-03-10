@@ -77,6 +77,31 @@ addFilter(
 - allowedBlocks _`{string[]}`_ List of Allowed Blocks.
 <br/>
 
+#### `search-replace-for-block-editor.excludedPostTypes`
+
+This custom hook (filter) provides the ability to prevent the loading of the Search & Replace app for specific post types like so:
+
+```js
+import { addFilter } from '@wordpress/hooks';
+
+addFilter(
+	'search-replace-for-block-editor.excludedPostTypes',
+	'yourNamespace',
+	( excludedPostTypes ) => {
+		if ( ! excludedPostTypes.includes( 'page' ) ) {
+			excludedPostTypes.push( 'page' );
+		}
+
+		return excludedPostTypes;
+	}
+);
+```
+
+**Parameters**
+
+- excludedPostTypes _`{string[]}`_ List of Allowed Blocks.
+<br/>
+
 #### `search-replace-for-block-editor.replaceBlockAttribute`
 
 This custom hook (action) provides the ability to include search and replace functionality for custom blocks with custom properties:

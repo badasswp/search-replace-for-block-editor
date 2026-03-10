@@ -11,12 +11,19 @@ import SearchReplaceForBlockEditor from './core/app';
 import {
 	getAppRoot,
 	getEditorRoot,
+	isAllowedForPostType,
 	isWpVersionGreaterThanOrEqualTo,
 } from './core/utils';
 
 ( async () => {
 	try {
+		// Bail out, if not allowed.
+		if ( ! isAllowedForPostType() ) {
+			return;
+		}
+
 		const app = getAppRoot( ( await getEditorRoot() ) as HTMLElement );
+
 		if ( ! isWpVersionGreaterThanOrEqualTo( '6.2.0' ) ) {
 			ReactDOM.render( <SearchReplaceForBlockEditor />, app );
 		} else {

@@ -357,3 +357,43 @@ export const getShortcutEvent = (): KeyboardEvent => {
 		bubbles: true,
 	} );
 };
+
+/**
+ * Is Allowed for Post type.
+ *
+ * This function checkes to see that the plugin
+ * is allowed for a specific post type.
+ *
+ * @since 1.10.0
+ *
+ * @return {boolean} True/false.
+ */
+export const isAllowedForPostType = (): boolean => {
+	const { postType } = srfbe;
+
+	// Bail out, if undefined.
+	if ( ! postType ) {
+		return false;
+	}
+
+	/**
+	 * Filter if a Post is excluded from
+	 * app inclusion or laoding.
+	 *
+	 * @since 1.10.0
+	 *
+	 * @param {string[]} excludedPostTypes Excluded Post types.
+	 * @return {string[]}
+	 */
+	const excludedPostTypes = applyFilters(
+		'search-replace-for-block-editor.excludedPostTypes',
+		[]
+	) as string[];
+
+	// Bail out, if excluded.
+	if ( excludedPostTypes.includes( postType ) ) {
+		return false;
+	}
+
+	return true;
+};

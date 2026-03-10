@@ -79,6 +79,7 @@ class Boot extends Service implements Kernel {
 			'srfbe',
 			[
 				'wpVersion'              => $wp_version,
+				'postType'               => get_post_type() ?? null,
 				'isShortcutEnabled'      => $srfbe['use_shortcut'] ?? null,
 				'isCaseMatchingEnabled'  => $srfbe['case_matching'] ?? null,
 				'isRegexMatchingEnabled' => $srfbe['regex_matching'] ?? null,

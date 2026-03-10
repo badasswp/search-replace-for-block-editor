@@ -67,6 +67,7 @@ Want to add your personal touch? All of our documentation can be found [here](ht
 * Feat: Add toggle for Regex expression matching.
 * Feat: Add Plugin options page.
 * Feat: Add Shortcut command (CMD + F).
+* Feat: Add custom hooks: `afterSearchReplace`.
 * Test: Add e2e tests for plugin codebase.
 * Tested up to WP 6.9.
 

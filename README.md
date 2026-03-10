@@ -42,7 +42,6 @@ addAction(
 **Parameters**
 
 - params _`{Object}`_ Parms.
-	- name _`{string}`_ Name of Block.
 	- replacements _`{number}`_ Number of replacements (or searches if status is false).
 	- searchInput _`{string}`_ The search input string.
 	- replaceInput _`{string}`_ The replace input string.

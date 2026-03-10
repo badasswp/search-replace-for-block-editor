@@ -111,12 +111,16 @@ class BootTest extends WPMockTestCase {
 			->with( 'search_replace_for_block_editor', [] )
 			->andReturn( null );
 
+		WP_Mock::userFunction( 'get_post_type' )
+			->andReturn( 'post' );
+
 		WP_Mock::userFunction( 'wp_localize_script' )
 			->with(
 				'search-replace-for-block-editor',
 				'srfbe',
 				[
 					'wpVersion'              => '6.9.1',
+					'postType'               => 'post',
 					'isShortcutEnabled'      => null,
 					'isCaseMatchingEnabled'  => null,
 					'isRegexMatchingEnabled' => null,

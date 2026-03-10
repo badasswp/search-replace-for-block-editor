@@ -377,8 +377,8 @@ export const isAllowedForPostType = (): boolean => {
 	}
 
 	/**
-	 * Filter if a Post is excluded from
-	 * app inclusion or laoding.
+	 * Filter if a Post has access to
+	 * Search & Replace app.
 	 *
 	 * @since 1.10.0
 	 *

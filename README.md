@@ -19,6 +19,39 @@ https://github.com/badasswp/search-and-replace/assets/149586343/d4acfab3-338b-43
 
 ### Hooks
 
+#### `search-replace-for-block-editor.afterSearchReplace`
+
+This custom hook (action) provides a way to fire some custom logic after a search & replace activity has happened. For e.g.
+
+```js
+import { addAction } from '@wordpress/hooks';
+
+addAction(
+	'search-replace-for-block-editor.afterSearchReplace',
+	'yourNamespace',
+	( params ) => {
+		const { replacements, searchInput, replaceInput, pattern, status, isCaseSensitive } = params;
+
+		if ( status ) {
+			alert( `${replacements} text items were replaced successfully!` );
+		}
+	}
+);
+```
+
+**Parameters**
+
+- params _`{Object}`_ Parms.
+	- replacements _`{number}`_ Number of replacements (or searches if status is false).
+	- searchInput _`{string}`_ The search input string.
+	- replaceInput _`{string}`_ The replace input string.
+	- pattern _`{RegExp}`_ The regex expression pattern.
+	- status _`{boolean}`_ The context (true for replacements, false for searches).
+	- isCaseSensitive _`{boolean}`_ Is search & replace operation case sensitive.
+	- isRegexExpression _`{boolean}`_ Is search & replace operation regex based.
+	- srfbe _`{Object}`_ Localized values passed to JS.
+<br/>
+
 #### `search-replace-for-block-editor.allowedBlocks`
 
 This custom hook (filter) provides the ability to include the search and replace functionality for your custom block:

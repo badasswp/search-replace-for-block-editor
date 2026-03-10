@@ -196,6 +196,37 @@ const SearchReplaceForBlockEditor = (): JSX.Element => {
 				}
 			);
 		}
+
+		/**
+		 * After Search & Replace.
+		 *
+		 * Fires after the search & replace
+		 * activity is completed.
+		 *
+		 * @since 1.10.0
+		 *
+		 * @param {Object}  params            Params.
+		 * @param {number}  replacements      Number of replacements (or searches if status is false).
+		 * @param {string}  searchInput       The search input string.
+		 * @param {string}  replaceInput      The replace input string.
+		 * @param {RegExp}  pattern           The regex expression pattern.
+		 * @param {boolean} status            The context (true for replacements, false for searches).
+		 * @param {boolean} isCaseSensitive   Is search & replace operation case sensitive.
+		 * @param {boolean} isRegexExpression Is search & replace operation regex based.
+		 * @param {Object}  srfbe             Localized values passed to JS.
+		 *
+		 * @return {void}
+		 */
+		doAction( 'search-replace-for-block-editor.afterSearchReplace', {
+			replacements,
+			searchInput,
+			replaceInput,
+			pattern,
+			status,
+			isCaseSensitive,
+			isRegexExpression,
+			srfbe,
+		} );
 	};
 
 	/**

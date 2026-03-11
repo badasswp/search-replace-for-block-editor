@@ -1,5 +1,5 @@
 {
-  "translation-revision-date": "2024-07-02 15:06+0100",
+  "translation-revision-date": "2024-08-29 21:32+0100",
   "generator": "WP-CLI\/2.6.0",
   "source": "dist\/app.js",
   "domain": "messages",
@@ -11,13 +11,16 @@
         "plural-forms": "nplurals=2; plural=(n != 1);"
       },
       "Search & Replace": [
-        "\u0627\u0644\u0628\u062d\u062b \u0648\u0627\u0644\u0627\u0633\u062a\u0628\u062f\u0627\u0644"
+        "بحث واستبدال"
       ],
       "item(s) replaced successfully": [
-        "\u0627\u0644\u0639\u0646\u0627\u0635\u0631 \u0627\u0644\u062A\u064A \u062A\u0645 \u0627\u0633\u062A\u0628\u062F\u0627\u0644\u0647\u0627 \u0628\u0646\u062C\u0627\u062D"
+        "تم استبدال العنصر (العناصر) بنجاح"
       ],
-      "Match Case | Expression": [
-        "حالة المباراة | تعبير"
+			"Match case": [
+        "حالة المباراة"
+      ],
+			"Use regular expression": [
+        "استخدم التعبير العادي"
       ]
     }
   }

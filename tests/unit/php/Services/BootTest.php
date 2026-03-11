@@ -124,6 +124,7 @@ class BootTest extends WPMockTestCase {
 					'isShortcutEnabled'      => null,
 					'isCaseMatchingEnabled'  => null,
 					'isRegexMatchingEnabled' => null,
+					'isWordMatchingEnabled'  => null,
 					'isCloseModalEnabled'    => null,
 					'isSavePostEnabled'      => null,
 				]

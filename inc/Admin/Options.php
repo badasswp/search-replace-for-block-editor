@@ -124,8 +124,8 @@ class Options {
 	 */
 	public static function get_form_fields() {
 		return [
-			'general_options' => [
-				'heading'  => esc_html__( 'General Options', 'search-replace-for-block-editor' ),
+			'toggle_options' => [
+				'heading'  => esc_html__( 'Toggle Options', 'search-replace-for-block-editor' ),
 				'controls' => [
 					'case_matching'  => [
 						'control' => esc_attr( 'checkbox' ),
@@ -137,17 +137,27 @@ class Options {
 						'label'   => esc_html__( 'Regex Matching', 'search-replace-for-block-editor' ),
 						'summary' => esc_html__( 'Enable Regex Matching toggle by default.', 'search-replace-for-block-editor' ),
 					],
-					'save_post'      => [
+					'word_matching'  => [
+						'control' => esc_attr( 'checkbox' ),
+						'label'   => esc_html__( 'Word Matching', 'search-replace-for-block-editor' ),
+						'summary' => esc_html__( 'Perform search & replace only for words which are not surrounded by any text or string.', 'search-replace-for-block-editor' ),
+					],
+				],
+			],
+			'other_options'  => [
+				'heading'  => esc_html__( 'Other Options', 'search-replace-for-block-editor' ),
+				'controls' => [
+					'save_post'    => [
 						'control' => esc_attr( 'checkbox' ),
 						'label'   => esc_html__( 'Save Post', 'search-replace-for-block-editor' ),
 						'summary' => esc_html__( 'Perform save after search & replace is completed.', 'search-replace-for-block-editor' ),
 					],
-					'close_modal'    => [
+					'close_modal'  => [
 						'control' => esc_attr( 'checkbox' ),
 						'label'   => esc_html__( 'Close Modal', 'search-replace-for-block-editor' ),
 						'summary' => esc_html__( 'Close modal after search & replace is completed.', 'search-replace-for-block-editor' ),
 					],
-					'use_shortcut'   => [
+					'use_shortcut' => [
 						'control' => esc_attr( 'checkbox' ),
 						'label'   => esc_html__( 'Use Shortcut', 'search-replace-for-block-editor' ),
 						'summary' => esc_html__( 'Enable Shortcut (CMD + F).', 'search-replace-for-block-editor' ),

@@ -83,6 +83,7 @@ class Boot extends Service implements Kernel {
 				'isShortcutEnabled'      => $srfbe['use_shortcut'] ?? null,
 				'isCaseMatchingEnabled'  => $srfbe['case_matching'] ?? null,
 				'isRegexMatchingEnabled' => $srfbe['regex_matching'] ?? null,
+				'isWordMatchingEnabled'  => $srfbe['word_matching'] ?? null,
 				'isCloseModalEnabled'    => $srfbe['close_modal'] ?? null,
 				'isSavePostEnabled'      => $srfbe['save_post'] ?? null,
 			]

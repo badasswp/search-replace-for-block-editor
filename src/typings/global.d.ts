@@ -1,6 +1,7 @@
 declare global {
   var srfbe: {
     wpVersion: string;
+		postType: string;
 		isShortcutEnabled: boolean;
 		isCaseMatchingEnabled: boolean;
 		isRegexMatchingEnabled: boolean;

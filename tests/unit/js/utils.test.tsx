@@ -224,6 +224,15 @@ describe( 'getBlockEditorIframe', () => {
 	} );
 } );
 
+const localizedValues = {
+	postType: 'post',
+	isShortcutEnabled: true,
+	isCaseMatchingEnabled: false,
+	isRegexMatchingEnabled: false,
+	isCloseModalEnabled: false,
+	isSavePostEnabled: false,
+};
+
 describe( 'isWpVersionGreaterThanOrEqualTo', () => {
 	beforeEach( () => {
 		jest.resetModules();
@@ -232,6 +241,7 @@ describe( 'isWpVersionGreaterThanOrEqualTo', () => {
 	it( 'isWpVersionGreaterThanOrEqualTo returns true if WP version is up to or above passed in arg version', () => {
 		window.srfbe = {
 			wpVersion: '6.7.2',
+			...localizedValues,
 		};
 
 		const {
@@ -247,6 +257,7 @@ describe( 'isWpVersionGreaterThanOrEqualTo', () => {
 	it( 'isWpVersionGreaterThanOrEqualTo returns false if WP version is not up to passed in arg version', () => {
 		window.srfbe = {
 			wpVersion: '6.7.0',
+			...localizedValues,
 		};
 
 		const {
@@ -262,6 +273,7 @@ describe( 'isWpVersionGreaterThanOrEqualTo', () => {
 	it( 'isWpVersionGreaterThanOrEqualTo returns false if param version number is not valid', () => {
 		window.srfbe = {
 			wpVersion: '2.3',
+			...localizedValues,
 		};
 
 		const {
@@ -277,6 +289,7 @@ describe( 'isWpVersionGreaterThanOrEqualTo', () => {
 	it( 'isWpVersionGreaterThanOrEqualTo returns true if one of params has version number without dot notation but is equal to or greater than version number', () => {
 		window.srfbe = {
 			wpVersion: '67',
+			...localizedValues,
 		};
 
 		const {
@@ -292,6 +305,7 @@ describe( 'isWpVersionGreaterThanOrEqualTo', () => {
 	it( 'isWpVersionGreaterThanOrEqualTo returns true if one of params has version number with single dot notation but is equal to or greater than version number', () => {
 		window.srfbe = {
 			wpVersion: '6.8',
+			...localizedValues,
 		};
 
 		const {

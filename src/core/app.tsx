@@ -168,10 +168,41 @@ const SearchReplaceForBlockEditor = (): JSX.Element => {
 			return;
 		}
 
-		const pattern: RegExp = new RegExp(
-			`(?<!<[^>]*)${ searchInput }(?<![^>]*<)`,
+		// Prepare raw string pattern.
+		const rawPattern = `(?<!<[^>]*)${ searchInput }(?<![^>]*<)`;
+
+		// Get Regex search pattern.
+		const regexPattern: RegExp = new RegExp(
+			rawPattern,
 			ifIsCaseSensitiveBasedOnFilter() || isCaseSensitive ? 'g' : 'gi'
 		);
+
+		/**
+		 * Filter the way we set the pattern, let users
+		 * customise their search pattern here.
+		 *
+		 * @since 1.10.0
+		 *
+		 * @param {RegExp} regexPattern Regex search pattern.
+		 * @param {string} rawPattern   Raw string pattern to be searched.
+		 * @param {Object} Params       Params containing `searchInput`, `replaceInput`, `status`,
+		 *                              `isCaseSensitive`, `isRegexExpression`, & `srfbe`.
+		 *
+		 * @return {RegExp} Filtered Search pattern.
+		 */
+		const pattern = applyFilters(
+			'search-replace-for-block-editor.regexPattern',
+			regexPattern,
+			rawPattern,
+			{
+				searchInput,
+				replaceInput,
+				status,
+				isCaseSensitive,
+				isRegexExpression,
+				srfbe,
+			}
+		) as RegExp;
 
 		select( 'core/block-editor' )
 			.getBlocks()

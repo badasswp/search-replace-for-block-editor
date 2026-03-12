@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Search and Replace for Block Editor\n"
 "POT-Creation-Date: 2024-07-2 00:00+0100\n"
-"PO-Revision-Date: 2024-10-02 23:17+0100\n"
+"PO-Revision-Date: 2026-03-12 10:03+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ar\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Domain: search-replace-for-block-editor\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.8\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: search-replace-for-block-editor.php\n"
@@ -22,19 +22,23 @@ msgstr ""
 
 #. Plugin Name
 msgid "Search and Replace for Block Editor"
-msgstr "البحث والاستبدال لمحرر المكونات"
+msgstr "البحث والاستبدال في محرر الكتل"
 
 #. Plugin URI
 msgid "https://github.com/badasswp/search-and-replace"
 msgstr "https://github.com/badasswp/search-and-replace"
 
 #. Description
-msgid "Search and Replace text within the Block Editor."
-msgstr "ابحث عن النص واستبدله داخل محرر المكونات."
+msgid "Search and replace text within the Block Editor."
+msgstr "البحث عن نص واستبداله داخل محرر الكتل."
+
+#. Description
+msgid "Search & Replace for Block Editor"
+msgstr "البحث والاستبدال في محرر الكتل"
 
 #. Author
 msgid "badasswp"
-msgstr "باداسوب"
+msgstr "badasswp"
 
 #. Author URI
 msgid "https://github.com/badasswp"
@@ -42,24 +46,96 @@ msgstr "https://github.com/badasswp"
 
 #: dist/app.js
 msgid "Search & Replace"
-msgstr "البحث والاستبدال"
+msgstr "بحث واستبدال"
 
 #. Search
 msgid "Search"
-msgstr "بحث"
+msgstr "يبحث"
 
 #. Replace
 msgid "Replace"
-msgstr "استبدال"
+msgstr "يستبدل"
 
 #. Done
 msgid "Done"
-msgstr "تم"
+msgstr "منتهي"
+
+#. Actions
+msgid "Actions"
+msgstr "الإجراءات"
+
+#. Case Matching
+msgid "Case Matching"
+msgstr "مطابقة الحالة"
+
+#. Enable Case Matching toggle by default.
+msgid "Enable Case Matching toggle by default."
+msgstr "قم بتفعيل خيار مطابقة حالة الأحرف افتراضيًا."
+
+#. Regex Matching
+msgid "Regex Matching"
+msgstr "Regex مطابقة"
+
+#. Enable Regex Matching toggle by default.
+msgid "Enable Regex Matching toggle by default."
+msgstr "تفعيل Regex خيار المطابقة افتراضياً."
+
+#. Save Post
+msgid "Save Post"
+msgstr "حفظ المشاركة"
+
+#. Save Changes
+msgid "Save Changes"
+msgstr "حفظ التغييرات"
+
+#. Toggle Options
+msgid "Toggle Options"
+msgstr "تبديل الخيارات"
+
+#. Other Options
+msgid "Other Options"
+msgstr "خيارات أخرى"
+
+#. Perform save after search & replace is completed.
+msgid "Perform save after search & replace is completed."
+msgstr "قم بحفظ التغييرات بعد اكتمال عملية البحث والاستبدال."
+
+#. Close Modal
+msgid "Close Modal"
+msgstr "إغلاق مشروط"
+
+#. Close modal after search & replace is completed.
+msgid "Close modal after search & replace is completed."
+msgstr "أغلق النافذة المنبثقة بعد اكتمال عملية البحث والاستبدال."
+
+#. Use Shortcut
+msgid "Use Shortcut"
+msgstr "استخدم الاختصار"
+
+#. Enable Shortcut (CMD + F).
+msgid "Enable Shortcut (CMD + F)."
+msgstr "تفعيل الاختصار (CMD + F)."
+
+#. Word Matching
+msgid "Word Matching"
+msgstr "مطابقة الكلمات"
+
+#. Word Matching label
+msgid ""
+"Perform search & replace only for words which are not surrounded by any text "
+"or string."
+msgstr ""
+"قم بإجراء عملية البحث والاستبدال فقط للكلمات التي لا يحيط بها أي نص أو سلسلة "
+"نصية."
 
 #. dist/app.js
 msgid "item(s) replaced successfully"
-msgstr "العناصر التي تم استبدالها بنجاح"
+msgstr "تم استبدال العنصر (العناصر) بنجاح"
 
 #. dist/app.js
-msgid "Match Case | Expression"
-msgstr "حالة المباراة | تعبير"
+msgid "Match case"
+msgstr "حالة المباراة"
+
+#. dist/app.js
+msgid "Use regular expression"
+msgstr "استخدم التعبير العادي"

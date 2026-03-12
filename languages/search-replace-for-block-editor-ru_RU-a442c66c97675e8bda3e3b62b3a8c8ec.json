@@ -1,23 +1,26 @@
 {
-  "translation-revision-date": "2024-07-02 11:53+0100",
-  "generator": "WP-CLI\/2.6.0",
-  "source": "dist\/app.js",
+  "translation-revision-date": "2026-03-12 10:03+0100",
+  "generator": "WP-CLI/2.6.0",
+  "source": "dist/app.js",
   "domain": "messages",
   "locale_data": {
     "messages": {
       "": {
         "domain": "messages",
         "lang": "ru_RU",
-        "plural-forms": "nplurals=2; plural=(n != 1);"
+        "plural-forms": "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);"
       },
       "Search & Replace": [
-        "\u041f\u043e\u0438\u0441\u043a \u0438 \u0437\u0430\u043c\u0435\u043d\u0430"
+        "Найти и Заменить"
       ],
       "item(s) replaced successfully": [
-        "\u044D\u043B\u0435\u043C\u0435\u043D\u0442\u044B \u0443\u0441\u043F\u0435\u0448\u043D\u043E \u0437\u0430\u043C\u0435\u043D\u0435\u043D\u044B"
+        "элемент(ы) успешно заменены"
       ],
-      "Match Case | Expression": [
-        "Футляр для спичек | Выражение"
+      "Match case": [
+        "Учитывать регистр"
+      ],
+      "Use regular expression": [
+        "Использовать регулярное выражение"
       ]
     }
   }

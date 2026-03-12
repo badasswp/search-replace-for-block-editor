@@ -29,7 +29,11 @@ msgid "https://github.com/badasswp/search-and-replace"
 msgstr ""
 
 #. Description
-msgid "Search and Replace text within the Block Editor."
+msgid "Search and replace text within the Block Editor."
+msgstr ""
+
+#. Description
+msgid "Search & Replace for Block Editor"
 msgstr ""
 
 #. Author
@@ -56,10 +60,78 @@ msgstr ""
 msgid "Done"
 msgstr ""
 
+#. Actions
+msgid "Actions"
+msgstr ""
+
+#. Case Matching
+msgid "Case Matching"
+msgstr ""
+
+#. Enable Case Matching toggle by default.
+msgid "Enable Case Matching toggle by default."
+msgstr ""
+
+#. Regex Matching
+msgid "Regex Matching"
+msgstr ""
+
+#. Enable Regex Matching toggle by default.
+msgid "Enable Regex Matching toggle by default."
+msgstr ""
+
+#. Save Post
+msgid "Save Post"
+msgstr ""
+
+#. Save Changes
+msgid "Save Changes"
+msgstr ""
+
+#. Toggle Options
+msgid "Toggle Options"
+msgstr ""
+
+#. Other Options
+msgid "Other Options"
+msgstr ""
+
+#. Perform save after search & replace is completed.
+msgid "Perform save after search & replace is completed."
+msgstr ""
+
+#. Close Modal
+msgid "Close Modal"
+msgstr ""
+
+#. Close modal after search & replace is completed.
+msgid "Close modal after search & replace is completed."
+msgstr ""
+
+#. Use Shortcut
+msgid "Use Shortcut"
+msgstr ""
+
+#. Enable Shortcut (CMD + F).
+msgid "Enable Shortcut (CMD + F)."
+msgstr ""
+
+#. Word Matching
+msgid "Word Matching"
+msgstr ""
+
+#. Word Matching label
+msgid "Perform search & replace only for words which are not surrounded by any text or string."
+msgstr ""
+
 #. dist/app.js
 msgid "item(s) replaced successfully"
 msgstr ""
 
 #. dist/app.js
-msgid "Match Case | Expression"
+msgid "Match case"
+msgstr ""
+
+#. dist/app.js
+msgid "Use regular expression"
 msgstr ""

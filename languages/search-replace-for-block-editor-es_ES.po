@@ -1,36 +1,34 @@
-# Copyright (C) badasswp
-# This file is distributed under the GPL v2 or later.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Search and Replace for Block Editor\n"
 "POT-Creation-Date: 2024-07-2 00:00+0100\n"
-"PO-Revision-Date: 2024-10-02 22:24+0100\n"
+"PO-Revision-Date: 2026-03-12 10:03+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Domain: search-replace-for-block-editor\n"
-"X-Generator: Poedit 3.5\n"
-"X-Poedit-Basepath: ..\n"
-"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
-"X-Poedit-WPHeader: search-replace-for-block-editor.php\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Generator: Poedit 3.8\n"
 
 #. Plugin Name
 msgid "Search and Replace for Block Editor"
-msgstr "Buscar y Reemplazar Para el editor de Bloques"
+msgstr "Buscar y Reemplazar en el Editor de Bloques"
 
 #. Plugin URI
 msgid "https://github.com/badasswp/search-and-replace"
 msgstr "https://github.com/badasswp/search-and-replace"
 
 #. Description
-msgid "Search and Replace text within the Block Editor."
-msgstr "Busque y Reemplace Texto dentro del Editor de Bloques."
+msgid "Search and replace text within the Block Editor."
+msgstr "Busca y reemplaza texto dentro del Editor de Bloques."
+
+#. Description
+msgid "Search & Replace for Block Editor"
+msgstr "Buscar y Reemplazar en el Editor de Bloques"
 
 #. Author
 msgid "badasswp"
@@ -40,7 +38,7 @@ msgstr "badasswp"
 msgid "https://github.com/badasswp"
 msgstr "https://github.com/badasswp"
 
-#: dist/app.js
+#. dist/app.js
 msgid "Search & Replace"
 msgstr "Buscar y Reemplazar"
 
@@ -56,10 +54,84 @@ msgstr "Reemplazar"
 msgid "Done"
 msgstr "Hecho"
 
-#. dist/app.js
-msgid "item(s) replaced successfully"
-msgstr "artículos reemplazados con éxito"
+#. Actions
+msgid "Actions"
+msgstr "Acciones"
+
+#. Case Matching
+msgid "Case Matching"
+msgstr "Distinguir Mayúsculas"
+
+#. Enable Case Matching toggle by default.
+msgid "Enable Case Matching toggle by default."
+msgstr ""
+"Activar la opción de distinción de mayúsculas de forma predeterminada."
+
+#. Regex Matching
+msgid "Regex Matching"
+msgstr "Coincidencia Regex"
+
+#. Enable Regex Matching toggle by default.
+msgid "Enable Regex Matching toggle by default."
+msgstr "Activar la opción de coincidencia Regex de forma predeterminada."
+
+#. Save Post
+msgid "Save Post"
+msgstr "Guardar Entrada"
+
+#. Save Changes
+msgid "Save Changes"
+msgstr "Guardar Cambios"
+
+#. Toggle Options
+msgid "Toggle Options"
+msgstr "Alternar Opciones"
+
+#. Other Options
+msgid "Other Options"
+msgstr "Otras Opciones"
+
+#. Perform save after search & replace is completed.
+msgid "Perform save after search & replace is completed."
+msgstr "Guardar después de que se complete la búsqueda y el reemplazo."
+
+#. Close Modal
+msgid "Close Modal"
+msgstr "Cerrar Ventana"
+
+#. Close modal after search & replace is completed.
+msgid "Close modal after search & replace is completed."
+msgstr ""
+"Cerrar la ventana después de que se complete la búsqueda y el reemplazo."
+
+#. Use Shortcut
+msgid "Use Shortcut"
+msgstr "Usar Atajo"
+
+#. Enable Shortcut (CMD + F).
+msgid "Enable Shortcut (CMD + F)."
+msgstr "Activar el atajo (CMD + F)."
+
+#. Word Matching
+msgid "Word Matching"
+msgstr "Coincidencia de Palabras"
+
+#. Word Matching label
+msgid ""
+"Perform search & replace only for words which are not surrounded by any text"
+" or string."
+msgstr ""
+"Realizar buscar y reemplazar solo para palabras que no estén rodeadas de "
+"texto o cadenas."
 
 #. dist/app.js
-msgid "Match Case | Expression"
-msgstr "Estuche de fósforo | Expresión"
+msgid "item(s) replaced successfully"
+msgstr "elemento(s) reemplazado(s) correctamente"
+
+#. dist/app.js
+msgid "Match case"
+msgstr "Distinguir mayúsculas y minúsculas"
+
+#. dist/app.js
+msgid "Use regular expression"
+msgstr "Usar expresión regular"

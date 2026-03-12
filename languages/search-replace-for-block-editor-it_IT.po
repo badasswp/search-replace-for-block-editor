@@ -1,36 +1,34 @@
-# Copyright (C) badasswp
-# This file is distributed under the GPL v2 or later.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Search and Replace for Block Editor\n"
 "POT-Creation-Date: 2024-07-2 00:00+0100\n"
-"PO-Revision-Date: 2024-10-02 23:13+0100\n"
+"PO-Revision-Date: 2026-03-12 10:03+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it_IT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Domain: search-replace-for-block-editor\n"
-"X-Generator: Poedit 3.5\n"
-"X-Poedit-Basepath: ..\n"
-"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
-"X-Poedit-WPHeader: search-replace-for-block-editor.php\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Generator: Poedit 3.8\n"
 
 #. Plugin Name
 msgid "Search and Replace for Block Editor"
-msgstr "Cerca e Sostituisci per l'editor a Blocchi"
+msgstr "Cerca e Sostituisci nell'Editor a Blocchi"
 
 #. Plugin URI
 msgid "https://github.com/badasswp/search-and-replace"
 msgstr "https://github.com/badasswp/search-and-replace"
 
 #. Description
-msgid "Search and Replace text within the Block Editor."
-msgstr "Cerca e Sostituisci il Testo all'interno dell'Editor Blocchi."
+msgid "Search and replace text within the Block Editor."
+msgstr "Cerca e sostituisci testo nell'Editor a Blocchi."
+
+#. Description
+msgid "Search & Replace for Block Editor"
+msgstr "Cerca e Sostituisci nell'Editor a Blocchi"
 
 #. Author
 msgid "badasswp"
@@ -40,9 +38,9 @@ msgstr "badasswp"
 msgid "https://github.com/badasswp"
 msgstr "https://github.com/badasswp"
 
-#: dist/app.js
+#. dist/app.js
 msgid "Search & Replace"
-msgstr "Cerca & Sostituisci"
+msgstr "Cerca e Sostituisci"
 
 #. Search
 msgid "Search"
@@ -54,12 +52,86 @@ msgstr "Sostituisci"
 
 #. Done
 msgid "Done"
-msgstr "Fatto"
+msgstr "Fine"
+
+#. Actions
+msgid "Actions"
+msgstr "Azioni"
+
+#. Case Matching
+msgid "Case Matching"
+msgstr "Maiuscole/Minuscole"
+
+#. Enable Case Matching toggle by default.
+msgid "Enable Case Matching toggle by default."
+msgstr ""
+"Abilita il riconoscimento maiuscole/minuscole per impostazione predefinita."
+
+#. Regex Matching
+msgid "Regex Matching"
+msgstr "Corrispondenza Regex"
+
+#. Enable Regex Matching toggle by default.
+msgid "Enable Regex Matching toggle by default."
+msgstr "Abilita la corrispondenza Regex per impostazione predefinita."
+
+#. Save Post
+msgid "Save Post"
+msgstr "Salva Articolo"
+
+#. Save Changes
+msgid "Save Changes"
+msgstr "Salva Modifiche"
+
+#. Toggle Options
+msgid "Toggle Options"
+msgstr "Mostra/Nascondi Opzioni"
+
+#. Other Options
+msgid "Other Options"
+msgstr "Altre Opzioni"
+
+#. Perform save after search & replace is completed.
+msgid "Perform save after search & replace is completed."
+msgstr "Salva dopo il completamento della ricerca e sostituzione."
+
+#. Close Modal
+msgid "Close Modal"
+msgstr "Chiudi Finestra"
+
+#. Close modal after search & replace is completed.
+msgid "Close modal after search & replace is completed."
+msgstr ""
+"Chiudi la finestra dopo il completamento della ricerca e sostituzione."
+
+#. Use Shortcut
+msgid "Use Shortcut"
+msgstr "Usa Scorciatoia"
+
+#. Enable Shortcut (CMD + F).
+msgid "Enable Shortcut (CMD + F)."
+msgstr "Abilita la scorciatoia (CMD + F)."
+
+#. Word Matching
+msgid "Word Matching"
+msgstr "Corrispondenza di Parole"
+
+#. Word Matching label
+msgid ""
+"Perform search & replace only for words which are not surrounded by any text"
+" or string."
+msgstr ""
+"Esegui la ricerca e sostituzione solo per parole non circondate da testo o "
+"stringhe."
 
 #. dist/app.js
 msgid "item(s) replaced successfully"
-msgstr "articoli sostituiti con successo"
+msgstr "elemento/i sostituito/i con successo"
 
 #. dist/app.js
-msgid "Match Case | Expression"
-msgstr "Custodia per fiammiferi | Espressione"
+msgid "Match case"
+msgstr "Maiuscole/minuscole"
+
+#. dist/app.js
+msgid "Use regular expression"
+msgstr "Usa espressione regolare"

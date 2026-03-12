@@ -1,36 +1,34 @@
-# Copyright (C) badasswp
-# This file is distributed under the GPL v2 or later.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Search and Replace for Block Editor\n"
 "POT-Creation-Date: 2024-07-2 00:00+0100\n"
-"PO-Revision-Date: 2024-10-02 23:08+0100\n"
+"PO-Revision-Date: 2026-03-12 10:03+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Domain: search-replace-for-block-editor\n"
-"X-Generator: Poedit 3.5\n"
-"X-Poedit-Basepath: ..\n"
-"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
-"X-Poedit-WPHeader: search-replace-for-block-editor.php\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Generator: Poedit 3.8\n"
 
 #. Plugin Name
 msgid "Search and Replace for Block Editor"
-msgstr "Pretraži i Zamijeni za Uređivač Blokova"
+msgstr "Traži i Zamijeni u Uređivaču Blokova"
 
 #. Plugin URI
 msgid "https://github.com/badasswp/search-and-replace"
 msgstr "https://github.com/badasswp/search-and-replace"
 
 #. Description
-msgid "Search and Replace text within the Block Editor."
-msgstr "Pretražite i Zamijenite tekst u Uređivaču Blokova."
+msgid "Search and replace text within the Block Editor."
+msgstr "Tražite i zamijenite tekst unutar Uređivača Blokova."
+
+#. Description
+msgid "Search & Replace for Block Editor"
+msgstr "Traži i Zamijeni u Uređivaču Blokova"
 
 #. Author
 msgid "badasswp"
@@ -40,13 +38,13 @@ msgstr "badasswp"
 msgid "https://github.com/badasswp"
 msgstr "https://github.com/badasswp"
 
-#: dist/app.js
+#. dist/app.js
 msgid "Search & Replace"
-msgstr "Pretraživanje i Zamjena"
+msgstr "Traži i Zamijeni"
 
 #. Search
 msgid "Search"
-msgstr "Pretraži"
+msgstr "Traži"
 
 #. Replace
 msgid "Replace"
@@ -56,10 +54,82 @@ msgstr "Zamijeni"
 msgid "Done"
 msgstr "Gotovo"
 
-#. dist/app.js
-msgid "item(s) replaced successfully"
-msgstr "stavke su uspješno zamijenjene"
+#. Actions
+msgid "Actions"
+msgstr "Radnje"
+
+#. Case Matching
+msgid "Case Matching"
+msgstr "Razlikovanje Velikih i Malih Slova"
+
+#. Enable Case Matching toggle by default.
+msgid "Enable Case Matching toggle by default."
+msgstr "Omogući razlikovanje velikih i malih slova prema zadanim postavkama."
+
+#. Regex Matching
+msgid "Regex Matching"
+msgstr "Regex Podudaranje"
+
+#. Enable Regex Matching toggle by default.
+msgid "Enable Regex Matching toggle by default."
+msgstr "Omogući Regex podudaranje prema zadanim postavkama."
+
+#. Save Post
+msgid "Save Post"
+msgstr "Spremi Objavu"
+
+#. Save Changes
+msgid "Save Changes"
+msgstr "Spremi Promjene"
+
+#. Toggle Options
+msgid "Toggle Options"
+msgstr "Uključi/Isključi Opcije"
+
+#. Other Options
+msgid "Other Options"
+msgstr "Ostale Opcije"
+
+#. Perform save after search & replace is completed.
+msgid "Perform save after search & replace is completed."
+msgstr "Spremi nakon završetka traženja i zamjene."
+
+#. Close Modal
+msgid "Close Modal"
+msgstr "Zatvori Prozor"
+
+#. Close modal after search & replace is completed.
+msgid "Close modal after search & replace is completed."
+msgstr "Zatvori prozor nakon završetka traženja i zamjene."
+
+#. Use Shortcut
+msgid "Use Shortcut"
+msgstr "Koristi Prečac"
+
+#. Enable Shortcut (CMD + F).
+msgid "Enable Shortcut (CMD + F)."
+msgstr "Omogući prečac (CMD + F)."
+
+#. Word Matching
+msgid "Word Matching"
+msgstr "Podudaranje Riječi"
+
+#. Word Matching label
+msgid ""
+"Perform search & replace only for words which are not surrounded by any text"
+" or string."
+msgstr ""
+"Izvedi traženje i zamjenu samo za riječi koje nisu okružene tekstom ili "
+"nizom."
 
 #. dist/app.js
-msgid "Match Case | Expression"
-msgstr "Slučaj šibice | Izraz"
+msgid "item(s) replaced successfully"
+msgstr "stavka/stavke uspješno zamijenjene"
+
+#. dist/app.js
+msgid "Match case"
+msgstr "Razlikuj velika i mala slova"
+
+#. dist/app.js
+msgid "Use regular expression"
+msgstr "Koristi regularni izraz"

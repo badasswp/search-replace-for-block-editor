@@ -102,6 +102,34 @@ addFilter(
 - excludedPostTypes _`{string[]}`_ List of Allowed Blocks.
 <br/>
 
+#### `search-replace-for-block-editor.regexPattern`
+
+This custom hook (filter) provides the ability to customise the default regex search pattern to a preferred pattern of choice. For e.g.
+
+```js
+import { addFilter } from '@wordpress/hooks';
+
+addFilter(
+	'search-replace-for-block-editor.regexPattern',
+	'yourNamespace',
+	( regexPattern, rawPattern, { searchInput, isCaseSensitive } ) => {
+		const firstName = searchInput.split( ' ' )[0] || '';
+
+		return new RegExp(
+			`(?<!<[^>]*)${ firstName }(?<![^>]*<)`,
+			isCaseSensitive ? 'g' : 'gi'
+		);
+	}
+);
+```
+
+**Parameters**
+
+- regexPattern _`{RegExp}`_ Regex search pattern.
+- rawPattern _`{string}`_ Raw string pattern to be searched.
+- params _`{Object}`_ Params containing `searchInput`, `replaceInput`, `status`, `isCaseSensitive`, `isRegexExpression`, & `srfbe`.
+<br/>
+
 #### `search-replace-for-block-editor.replaceBlockAttribute`
 
 This custom hook (action) provides the ability to include search and replace functionality for custom blocks with custom properties:

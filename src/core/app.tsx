@@ -207,7 +207,7 @@ const SearchReplaceForBlockEditor = (): JSX.Element => {
 		select( 'core/block-editor' )
 			.getBlocks()
 			.forEach( ( element: any ) => {
-				recursivelyReplace( element, pattern, replaceInput, status );
+				recursivelyReplace( element, pattern, status );
 			} );
 
 		if ( status && isSavePostEnabled ) {
@@ -271,7 +271,6 @@ const SearchReplaceForBlockEditor = (): JSX.Element => {
 	 *
 	 * @param {any}     element Gutenberg editor block.
 	 * @param {RegExp}  pattern Search pattern.
-	 * @param {string}  text    Replace pattern.
 	 * @param {boolean} status  True (Replace), False (Search).
 	 *
 	 * @return {void}
@@ -279,13 +278,12 @@ const SearchReplaceForBlockEditor = (): JSX.Element => {
 	const recursivelyReplace = (
 		element: any,
 		pattern: RegExp,
-		text: string,
 		status: boolean
 	): void => {
 		const { name, innerBlocks } = element;
 
 		if ( getAllowedBlocks().indexOf( name ) !== -1 ) {
-			const args = { element, pattern, text, status };
+			const args = { element, pattern, status };
 
 			/**
 			 * Replace Block Attribute.
@@ -310,7 +308,7 @@ const SearchReplaceForBlockEditor = (): JSX.Element => {
 
 		if ( innerBlocks.length ) {
 			innerBlocks.forEach( ( innerElement: any ) => {
-				recursivelyReplace( innerElement, pattern, text, status );
+				recursivelyReplace( innerElement, pattern, status );
 			} );
 		}
 	};
@@ -331,7 +329,6 @@ const SearchReplaceForBlockEditor = (): JSX.Element => {
 		const property = {};
 		const {
 			pattern,
-			text,
 			element: { attributes, clientId, name },
 			status,
 		} = args;
@@ -353,7 +350,7 @@ const SearchReplaceForBlockEditor = (): JSX.Element => {
 		 */
 		const handleAttributeReplacement = (): string => {
 			setReplacements( ( items: number ) => items + 1 );
-			return text;
+			return replaceInput;
 		};
 
 		/**

@@ -90,6 +90,10 @@ msgstr "הצג/הסתר אפשרויות"
 msgid "Other Options"
 msgstr "אפשרויות נוספות"
 
+#. Settings Saved.
+msgid "Settings Saved."
+msgstr "ההגדרות נשמרו."
+
 #. Perform save after search & replace is completed.
 msgid "Perform save after search & replace is completed."
 msgstr "שמור לאחר השלמת החיפוש וההחלפה."

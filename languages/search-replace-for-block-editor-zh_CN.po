@@ -90,6 +90,10 @@ msgstr "切换选项"
 msgid "Other Options"
 msgstr "其他选项"
 
+#. Settings Saved.
+msgid "Settings Saved."
+msgstr "设置已保存。"
+
 #. Perform save after search & replace is completed.
 msgid "Perform save after search & replace is completed."
 msgstr "搜索和替换完成后保存。"

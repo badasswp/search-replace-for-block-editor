@@ -90,6 +90,10 @@ msgstr "Uključi/Isključi Opcije"
 msgid "Other Options"
 msgstr "Ostale Opcije"
 
+#. Settings Saved.
+msgid "Settings Saved."
+msgstr "Postavke su spremljene."
+
 #. Perform save after search & replace is completed.
 msgid "Perform save after search & replace is completed."
 msgstr "Spremi nakon završetka traženja i zamjene."

@@ -90,6 +90,10 @@ msgstr "विकल्प टॉगल करें"
 msgid "Other Options"
 msgstr "अन्य विकल्प"
 
+#. Settings Saved.
+msgid "Settings Saved."
+msgstr "सेटिंग्स सहेजी गईं।"
+
 #. Perform save after search & replace is completed.
 msgid "Perform save after search & replace is completed."
 msgstr "खोज और बदलाव पूरा होने के बाद सहेजें।"

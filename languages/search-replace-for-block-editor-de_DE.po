@@ -90,6 +90,10 @@ msgstr "Optionen umschalten"
 msgid "Other Options"
 msgstr "Weitere Optionen"
 
+#. Settings Saved.
+msgid "Settings Saved."
+msgstr "Einstellungen gespeichert."
+
 #. Perform save after search & replace is completed.
 msgid "Perform save after search & replace is completed."
 msgstr "Nach Abschluss von Suchen und Ersetzen speichern."

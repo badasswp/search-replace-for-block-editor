@@ -90,6 +90,10 @@ msgstr "Показать/Скрыть Параметры"
 msgid "Other Options"
 msgstr "Другие Параметры"
 
+#. Settings Saved.
+msgid "Settings Saved."
+msgstr "Настройки сохранены."
+
 #. Perform save after search & replace is completed.
 msgid "Perform save after search & replace is completed."
 msgstr "Сохранить после завершения поиска и замены."

@@ -90,6 +90,10 @@ msgstr "Skift Indstillinger"
 msgid "Other Options"
 msgstr "Andre Indstillinger"
 
+#. Settings Saved.
+msgid "Settings Saved."
+msgstr "Indstillinger gemt."
+
 #. Perform save after search & replace is completed.
 msgid "Perform save after search & replace is completed."
 msgstr "Gem efter søg og erstat er fuldført."

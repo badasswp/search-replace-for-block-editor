@@ -96,6 +96,10 @@ msgstr ""
 msgid "Other Options"
 msgstr ""
 
+#. Settings Saved.
+msgid "Settings Saved."
+msgstr ""
+
 #. Perform save after search & replace is completed.
 msgid "Perform save after search & replace is completed."
 msgstr ""

@@ -1,7 +1,7 @@
 {
-  "translation-revision-date": "2024-07-02 15:45+0100",
-  "generator": "WP-CLI\/2.6.0",
-  "source": "dist\/app.js",
+  "translation-revision-date": "2026-03-12 10:03+0100",
+  "generator": "WP-CLI/2.6.0",
+  "source": "dist/app.js",
   "domain": "messages",
   "locale_data": {
     "messages": {
@@ -11,13 +11,16 @@
         "plural-forms": "nplurals=2; plural=(n != 1);"
       },
       "Search & Replace": [
-        "Suchen & Ersetzen"
+        "Suchen und Ersetzen"
       ],
       "item(s) replaced successfully": [
-        "artikel erfolgreich ausgetauscht"
+        "Element(e) erfolgreich ersetzt"
       ],
-      "Match Case | Expression": [
-        "Streichholz-Fall | Ausdruck"
+      "Match case": [
+        "Groß-/Kleinschreibung beachten"
+      ],
+      "Use regular expression": [
+        "Regulären Ausdruck verwenden"
       ]
     }
   }

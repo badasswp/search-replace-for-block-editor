@@ -1,23 +1,26 @@
 {
-  "translation-revision-date": "2024-07-02 15:47+0100",
-  "generator": "WP-CLI\/2.6.0",
-  "source": "dist\/app.js",
+  "translation-revision-date": "2026-03-12 10:03+0100",
+  "generator": "WP-CLI/2.6.0",
+  "source": "dist/app.js",
   "domain": "messages",
   "locale_data": {
     "messages": {
       "": {
         "domain": "messages",
         "lang": "hr",
-        "plural-forms": "nplurals=2; plural=(n != 1);"
+        "plural-forms": "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);"
       },
       "Search & Replace": [
-        "Pretra\u017eivanje i Zamjena"
+        "Traži i Zamijeni"
       ],
       "item(s) replaced successfully": [
-        "stavke su uspje\u0161no zamijenjene"
+        "stavka/stavke uspješno zamijenjene"
       ],
-      "Match Case | Expression": [
-        "Slučaj šibice | Izraz"
+      "Match case": [
+        "Razlikuj velika i mala slova"
+      ],
+      "Use regular expression": [
+        "Koristi regularni izraz"
       ]
     }
   }

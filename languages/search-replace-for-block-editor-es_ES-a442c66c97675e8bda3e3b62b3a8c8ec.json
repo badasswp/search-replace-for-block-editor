@@ -1,7 +1,7 @@
 {
-  "translation-revision-date": "2024-07-02 12:02+0100",
-  "generator": "WP-CLI\/2.6.0",
-  "source": "dist\/app.js",
+  "translation-revision-date": "2026-03-12 10:03+0100",
+  "generator": "WP-CLI/2.6.0",
+  "source": "dist/app.js",
   "domain": "messages",
   "locale_data": {
     "messages": {
@@ -14,10 +14,13 @@
         "Buscar y Reemplazar"
       ],
       "item(s) replaced successfully": [
-        "artículos reemplazados con éxito"
+        "elemento(s) reemplazado(s) correctamente"
       ],
-      "Match Case | Expression": [
-        "Estuche de fósforo | Expresión"
+      "Match case": [
+        "Distinguir mayúsculas y minúsculas"
+      ],
+      "Use regular expression": [
+        "Usar expresión regular"
       ]
     }
   }

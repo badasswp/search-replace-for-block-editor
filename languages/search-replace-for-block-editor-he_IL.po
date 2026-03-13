@@ -1,65 +1,137 @@
-# Copyright (C) badasswp
-# This file is distributed under the GPL v2 or later.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Search and Replace for Block Editor\n"
 "POT-Creation-Date: 2024-07-2 00:00+0100\n"
-"PO-Revision-Date: 2024-10-02 22:38+0100\n"
+"PO-Revision-Date: 2026-03-12 10:03+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: he_IL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Domain: search-replace-for-block-editor\n"
-"X-Generator: Poedit 3.5\n"
-"X-Poedit-Basepath: ..\n"
-"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
-"X-Poedit-WPHeader: search-replace-for-block-editor.php\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Generator: Poedit 3.8\n"
 
 #. Plugin Name
 msgid "Search and Replace for Block Editor"
-msgstr "חיפוש והחלפה עבור עורך הבלוקים"
+msgstr "חיפוש והחלפה בעורך הבלוקים"
 
 #. Plugin URI
 msgid "https://github.com/badasswp/search-and-replace"
 msgstr "https://github.com/badasswp/search-and-replace"
 
 #. Description
-msgid "Search and Replace text within the Block Editor."
-msgstr "חפש והחלף טקסט בתוך עורך החסימות."
+msgid "Search and replace text within the Block Editor."
+msgstr "חפש והחלף טקסט בעורך הבלוקים."
+
+#. Description
+msgid "Search & Replace for Block Editor"
+msgstr "חיפוש והחלפה בעורך הבלוקים"
 
 #. Author
 msgid "badasswp"
-msgstr "‫badasswp"
+msgstr "badasswp"
 
 #. Author URI
 msgid "https://github.com/badasswp"
 msgstr "https://github.com/badasswp"
 
-#: dist/app.js
+#. dist/app.js
 msgid "Search & Replace"
 msgstr "חיפוש והחלפה"
 
 #. Search
 msgid "Search"
-msgstr "חידון חיפוש"
+msgstr "חיפוש"
 
 #. Replace
 msgid "Replace"
-msgstr "החלף"
+msgstr "החלפה"
 
 #. Done
 msgid "Done"
-msgstr "בוצע"
+msgstr "סיום"
+
+#. Actions
+msgid "Actions"
+msgstr "פעולות"
+
+#. Case Matching
+msgid "Case Matching"
+msgstr "התאמת רישיות"
+
+#. Enable Case Matching toggle by default.
+msgid "Enable Case Matching toggle by default."
+msgstr "הפעל את אפשרות התאמת הרישיות כברירת מחדל."
+
+#. Regex Matching
+msgid "Regex Matching"
+msgstr "התאמת Regex"
+
+#. Enable Regex Matching toggle by default.
+msgid "Enable Regex Matching toggle by default."
+msgstr "הפעל את אפשרות התאמת Regex כברירת מחדל."
+
+#. Save Post
+msgid "Save Post"
+msgstr "שמור פוסט"
+
+#. Save Changes
+msgid "Save Changes"
+msgstr "שמור שינויים"
+
+#. Toggle Options
+msgid "Toggle Options"
+msgstr "הצג/הסתר אפשרויות"
+
+#. Other Options
+msgid "Other Options"
+msgstr "אפשרויות נוספות"
+
+#. Settings Saved.
+msgid "Settings Saved."
+msgstr "ההגדרות נשמרו."
+
+#. Perform save after search & replace is completed.
+msgid "Perform save after search & replace is completed."
+msgstr "שמור לאחר השלמת החיפוש וההחלפה."
+
+#. Close Modal
+msgid "Close Modal"
+msgstr "סגור חלון"
+
+#. Close modal after search & replace is completed.
+msgid "Close modal after search & replace is completed."
+msgstr "סגור את החלון לאחר השלמת החיפוש וההחלפה."
+
+#. Use Shortcut
+msgid "Use Shortcut"
+msgstr "השתמש בקיצור דרך"
+
+#. Enable Shortcut (CMD + F).
+msgid "Enable Shortcut (CMD + F)."
+msgstr "הפעל קיצור דרך (CMD + F)."
+
+#. Word Matching
+msgid "Word Matching"
+msgstr "התאמת מילים"
+
+#. Word Matching label
+msgid ""
+"Perform search & replace only for words which are not surrounded by any text"
+" or string."
+msgstr "בצע חיפוש והחלפה רק עבור מילים שאינן מוקפות בטקסט או מחרוזת."
 
 #. dist/app.js
 msgid "item(s) replaced successfully"
-msgstr "פריטים שהוחלפו בהצלחה"
+msgstr "פריט/ים הוחלפו בהצלחה"
 
 #. dist/app.js
-msgid "Match Case | Expression"
-msgstr "התאמה למקרה | ביטוי"
+msgid "Match case"
+msgstr "התאמת רישיות"
+
+#. dist/app.js
+msgid "Use regular expression"
+msgstr "השתמש בביטוי רגולרי"

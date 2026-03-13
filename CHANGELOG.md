@@ -1,6 +1,7 @@
 # Changelog
 
 ## 1.10.0
+* Feat: Added translation languages for `Japanese`,`Indonesian`, `Turkish`, `Polish`, `Dutch`, `Brazil` and `Portuguese`.
 * Feat: Add toggle for Regex expression matching.
 * Feat: Add Plugin options page.
 * Feat: Add Shortcut command (CMD + F).

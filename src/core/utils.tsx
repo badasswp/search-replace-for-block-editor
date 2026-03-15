@@ -397,3 +397,34 @@ export const isAllowedForPostType = (): boolean => {
 
 	return true;
 };
+
+/**
+ * Escape user input for safe
+ * literal RegExp usage.
+ *
+ * @since 1.10.0
+ *
+ * @param {string} value Raw user input.
+ * @return {string} Escaped input.
+ */
+export const escapeRegex = ( value: string ): string => {
+	if ( typeof value !== 'string' ) {
+		return '';
+	}
+
+	return value.replace( /[.*+?^${}()|[\]\\]/g, '\\$&' );
+};
+
+/**
+ * Get Search Pattern.
+ *
+ * This function returns a string pattern
+ * that targets only texts within valid HTML markup.
+ *
+ * @since 1.10.0
+ *
+ * @param {string} searchText Search Text.
+ * @return {string} Search Pattern.
+ */
+export const getPattern = ( searchText: string ): string =>
+	`(?<!<[^>]*)${ searchText }(?<![^>]*<)`;

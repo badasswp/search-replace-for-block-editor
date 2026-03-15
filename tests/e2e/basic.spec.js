@@ -11,11 +11,6 @@ test.describe( 'Search & Replace', () => {
 	} );
 
 	test( 'it displays the plugin icon', async ( { page } ) => {
-		const closeIcon = page.getByRole( 'button', { name: 'Close' } );
-
-		await expect( closeIcon ).toBeVisible();
-		await closeIcon.click();
-
 		const pluginIcon = page.getByRole( 'button', {
 			name: 'Search & Replace',
 		} );
@@ -24,11 +19,6 @@ test.describe( 'Search & Replace', () => {
 	} );
 
 	test( 'it displays modal on icon click', async ( { page } ) => {
-		const closeIcon = page.getByRole( 'button', { name: 'Close' } );
-
-		await expect( closeIcon ).toBeVisible();
-		await closeIcon.click();
-
 		// Click Plugin icon.
 		await expect(
 			page.getByRole( 'button', {
@@ -66,9 +56,12 @@ test.describe( 'Search & Replace', () => {
 			page.getByRole( 'textbox', { name: 'Replace' } )
 		).toBeVisible();
 
-		// The checkbox.
+		// The checkboxes.
 		await expect(
-			page.getByRole( 'checkbox', { name: 'Match Case | Expression' } )
+			page.getByRole( 'checkbox', { name: 'Match case' } )
+		).toBeVisible();
+		await expect(
+			page.getByRole( 'checkbox', { name: 'Use regular expression' } )
 		).toBeVisible();
 
 		// The buttons.
@@ -81,11 +74,6 @@ test.describe( 'Search & Replace', () => {
 	} );
 
 	test( 'it matches text within the body content', async ( { page } ) => {
-		const closeIcon = page.getByRole( 'button', { name: 'Close' } );
-
-		await expect( closeIcon ).toBeVisible();
-		await closeIcon.click();
-
 		// Populate post title & content.
 		const postTitle = page
 			.locator( 'iframe[name="editor-canvas"]' )
@@ -137,11 +125,6 @@ test.describe( 'Search & Replace', () => {
 	} );
 
 	test( 'it performs search and replace for text', async ( { page } ) => {
-		const closeIcon = page.getByRole( 'button', { name: 'Close' } );
-
-		await expect( closeIcon ).toBeVisible();
-		await closeIcon.click();
-
 		// Populate post title & content.
 		const postTitle = page
 			.locator( 'iframe[name="editor-canvas"]' )
@@ -207,11 +190,6 @@ test.describe( 'Search & Replace', () => {
 	} );
 
 	test( 'it matches text case for search and replace', async ( { page } ) => {
-		const closeIcon = page.getByRole( 'button', { name: 'Close' } );
-
-		await expect( closeIcon ).toBeVisible();
-		await closeIcon.click();
-
 		// Populate post title & content.
 		const postTitle = page
 			.locator( 'iframe[name="editor-canvas"]' )
@@ -263,11 +241,9 @@ test.describe( 'Search & Replace', () => {
 
 		// Check the match case toggle.
 		await expect(
-			page.getByRole( 'checkbox', { name: 'Match Case | Expression' } )
+			page.getByRole( 'checkbox', { name: 'Match case' } )
 		).toBeVisible();
-		await page
-			.getByRole( 'checkbox', { name: 'Match Case | Expression' } )
-			.click();
+		await page.getByRole( 'checkbox', { name: 'Match case' } ).click();
 
 		// Replace text.
 		await expect(
@@ -282,5 +258,74 @@ test.describe( 'Search & Replace', () => {
 		await expect(
 			page.getByText( 'item(s) replaced successfully.' )
 		).toHaveText( '1 item(s) replaced successfully.' );
+	} );
+
+	test( 'it toggles case matching and use regular expression by default', async ( {
+		page,
+	} ) => {
+		await page.getByRole( 'link', { name: 'View Posts' } ).click();
+		await expect(
+			page.getByRole( 'link', { name: 'Posts', exact: true } )
+		).toBeVisible();
+
+		// Go to plugin options page.
+		await page
+			.getByRole( 'link', { name: 'Search & Replace for Block Editor' } )
+			.click();
+		await expect(
+			page.getByRole( 'heading', {
+				name: 'Search & Replace for Block Editor',
+			} )
+		).toBeVisible();
+
+		// Enable Case Matching
+		await expect(
+			page.locator( 'input[name="case_matching"]' )
+		).toBeVisible();
+		await page.locator( 'input[name="case_matching"]' ).click();
+
+		// Enable Regex Matching
+		await expect(
+			page.locator( 'input[name="regex_matching"]' )
+		).toBeVisible();
+		await page.locator( 'input[name="regex_matching"]' ).click();
+
+		// Save plugin options.
+		await page.getByRole( 'button', { name: 'Save Changes' } ).click();
+
+		// Now create a new post.
+		await page.getByRole( 'link', { name: 'Posts', exact: true } ).click();
+		await page
+			.getByLabel( 'Main menu', { exact: true } )
+			.getByRole( 'link', { name: 'Add Post' } )
+			.click();
+
+		// Click Plugin icon.
+		await expect(
+			page.getByRole( 'button', {
+				name: 'Search & Replace',
+			} )
+		).toBeVisible();
+		await page
+			.getByRole( 'button', {
+				name: 'Search & Replace',
+			} )
+			.click();
+
+		// Ensure toggles are visible.
+		await expect(
+			page.getByRole( 'checkbox', { name: 'Match case' } )
+		).toBeVisible();
+		await expect(
+			page.getByRole( 'checkbox', { name: 'Use regular expression' } )
+		).toBeVisible();
+
+		// Ensure toggles are checked by default.
+		await expect(
+			page.getByRole( 'checkbox', { name: 'Match case' } )
+		).toBeChecked();
+		await expect(
+			page.getByRole( 'checkbox', { name: 'Use regular expression' } )
+		).toBeChecked();
 	} );
 } );

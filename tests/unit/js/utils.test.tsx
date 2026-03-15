@@ -391,3 +391,37 @@ describe( 'getShortcutEvent', () => {
 		expect( shortcutEvent ).toBeInstanceOf( KeyboardEvent );
 	} );
 } );
+
+describe( 'escapeRegex', () => {
+	beforeEach( () => {
+		jest.resetModules();
+	} );
+
+	it( 'escapeRegex escapes regex metacharacters', () => {
+		const { escapeRegex } = require( '../../../src/core/utils' );
+
+		const escaped = escapeRegex( 'a.b+c*^$()[]{}|\\' );
+
+		expect( escaped ).toBe( 'a\\.b\\+c\\*\\^\\$\\(\\)\\[\\]\\{\\}\\|\\\\' );
+	} );
+
+	it( 'escapeRegex leaves plain text unchanged', () => {
+		const { escapeRegex } = require( '../../../src/core/utils' );
+
+		const escaped = escapeRegex( 'plain text' );
+
+		expect( escaped ).toBe( 'plain text' );
+	} );
+
+	it( 'escapeRegex returns empty string for non-string inputs', () => {
+		const { escapeRegex } = require( '../../../src/core/utils' );
+
+		expect( escapeRegex( 123 ) ).toBe( '' );
+	} );
+
+	it( 'escapeRegex returns empty string for empty input', () => {
+		const { escapeRegex } = require( '../../../src/core/utils' );
+
+		expect( escapeRegex( '' ) ).toBe( '' );
+	} );
+} );

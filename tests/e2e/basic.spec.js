@@ -2,10 +2,7 @@ import { test, expect } from '@wordpress/e2e-test-utils-playwright';
 
 export async function createNewPost( page ) {
 	await page.goto( '/wp-admin/post-new.php' );
-	await page.waitForSelector( '#editor' );
-	await page.waitForFunction( () =>
-		window.wp?.data?.select( 'core/editor' )
-	);
+	await page.waitForSelector( '.edit-post-layout' );
 }
 
 test.describe( 'Search & Replace', () => {

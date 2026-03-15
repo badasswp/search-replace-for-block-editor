@@ -42,6 +42,8 @@ jobs:
       - name: Start wp-env
         run: |
           yarn wp-env start
+          yarn wp-env cli wp rewrite structure '/%postname%' --hard
+          yarn wp-env cli wp rewrite flush --hard
 
       - name: Wait for WP
         run: |
@@ -49,8 +51,6 @@ jobs:
 
       - name: Run e2e tests
         run: |
-          yarn wp-env cli wp rewrite structure '/%postname%' --hard
-          yarn wp-env cli wp rewrite flush --hard
           yarn test:e2e
 
       - name: Set up PHP v8.2

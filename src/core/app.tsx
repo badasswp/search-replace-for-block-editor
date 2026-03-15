@@ -512,7 +512,7 @@ const SearchReplaceForBlockEditor = (): JSX.Element => {
 								'Match case',
 								'search-replace-for-block-editor'
 							) }
-							checked={ isCaseSensitive }
+							checked={ !! isCaseSensitive }
 							onChange={ handleCaseToggle }
 							__nextHasNoMarginBottom
 						/>
@@ -521,7 +521,7 @@ const SearchReplaceForBlockEditor = (): JSX.Element => {
 								'Use regular expression',
 								'search-replace-for-block-editor'
 							) }
-							checked={ isRegexExpression }
+							checked={ !! isRegexExpression }
 							onChange={ handleRegexToggle }
 							__nextHasNoMarginBottom
 						/>

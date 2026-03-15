@@ -3,6 +3,9 @@ import { test, expect } from '@wordpress/e2e-test-utils-playwright';
 export async function createNewPost( page ) {
 	await page.goto( '/wp-admin/post-new.php' );
 	await page.waitForSelector( '#editor' );
+	await page.waitForFunction( () =>
+		window.wp?.data?.select( 'core/editor' )
+	);
 }
 
 test.describe( 'Search & Replace', () => {

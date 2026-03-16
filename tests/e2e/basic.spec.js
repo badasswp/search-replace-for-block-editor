@@ -11,6 +11,11 @@ test.describe( 'Search & Replace', () => {
 	} );
 
 	test( 'it displays the plugin icon', async ( { page } ) => {
+		const closeIcon = page.getByRole( 'button', { name: 'Close' } );
+
+		await expect( closeIcon ).toBeVisible();
+		await closeIcon.click();
+
 		const pluginIcon = page.getByRole( 'button', {
 			name: 'Search & Replace',
 		} );
@@ -19,6 +24,11 @@ test.describe( 'Search & Replace', () => {
 	} );
 
 	test( 'it displays modal on icon click', async ( { page } ) => {
+		const closeIcon = page.getByRole( 'button', { name: 'Close' } );
+
+		await expect( closeIcon ).toBeVisible();
+		await closeIcon.click();
+
 		// Click Plugin icon.
 		await expect(
 			page.getByRole( 'button', {
@@ -74,6 +84,11 @@ test.describe( 'Search & Replace', () => {
 	} );
 
 	test( 'it matches text within the body content', async ( { page } ) => {
+		const closeIcon = page.getByRole( 'button', { name: 'Close' } );
+
+		await expect( closeIcon ).toBeVisible();
+		await closeIcon.click();
+
 		// Populate post title & content.
 		const postTitle = page
 			.locator( 'iframe[name="editor-canvas"]' )
@@ -125,6 +140,11 @@ test.describe( 'Search & Replace', () => {
 	} );
 
 	test( 'it performs search and replace for text', async ( { page } ) => {
+		const closeIcon = page.getByRole( 'button', { name: 'Close' } );
+
+		await expect( closeIcon ).toBeVisible();
+		await closeIcon.click();
+
 		// Populate post title & content.
 		const postTitle = page
 			.locator( 'iframe[name="editor-canvas"]' )
@@ -190,6 +210,11 @@ test.describe( 'Search & Replace', () => {
 	} );
 
 	test( 'it matches text case for search and replace', async ( { page } ) => {
+		const closeIcon = page.getByRole( 'button', { name: 'Close' } );
+
+		await expect( closeIcon ).toBeVisible();
+		await closeIcon.click();
+
 		// Populate post title & content.
 		const postTitle = page
 			.locator( 'iframe[name="editor-canvas"]' )
@@ -263,6 +288,11 @@ test.describe( 'Search & Replace', () => {
 	test( 'it toggles case matching and use regular expression by default', async ( {
 		page,
 	} ) => {
+		const closeIcon = page.getByRole( 'button', { name: 'Close' } );
+
+		await expect( closeIcon ).toBeVisible();
+		await closeIcon.click();
+
 		await page.getByRole( 'link', { name: 'View Posts' } ).click();
 		await expect(
 			page.getByRole( 'link', { name: 'Posts', exact: true } )

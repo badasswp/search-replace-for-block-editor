@@ -1,13 +1,13 @@
-# search-and-replace
+# search-replace-for-block-editor
 Search and Replace text within the Block Editor quickly and easily.
 
-<img width="446" alt="search-and-replace" src="https://github.com/badasswp/search-and-replace/assets/149586343/c3febf99-e9db-4b7b-82fd-c01e5428123a">
+<img width="446" alt="search-replace-for-block-editor" src="https://github.com/badasswp/search-and-replace/assets/149586343/c3febf99-e9db-4b7b-82fd-c01e5428123a">
 
 ## Download
 
 Download from [WordPress plugin repository](https://wordpress.org/plugins/search-replace-for-block-editor/).
 
-You can also get the latest version from any of our [release tags](https://github.com/badasswp/search-and-replace/releases).
+You can also get the latest version from any of our [release tags](https://github.com/badasswp/search-replace-for-block-editor/releases).
 
 ## Why Search and Replace for Block Editor?
 
@@ -15,7 +15,7 @@ This plugin brings the familiar __Search and Replace__ functionality that PC use
 
 Now you can easily search and replace text right in the Block Editor. Its easy and does exactly what it says. You can also match the text case using the 'Match Case | Expression' toggle.
 
-https://github.com/badasswp/search-and-replace/assets/149586343/d4acfab3-338b-434f-b09c-769df9331095
+https://github.com/badasswp/search-replace-for-block-editor/assets/149586343/d4acfab3-338b-434f-b09c-769df9331095
 
 ### Hooks
 

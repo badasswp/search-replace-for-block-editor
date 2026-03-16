@@ -13,6 +13,8 @@ import {
 
 import { Shortcut } from './shortcut';
 import {
+	getPattern,
+	escapeRegex,
 	getAllowedBlocks,
 	getBlockEditorIframe,
 	ifIsCaseSensitiveBasedOnFilter,
@@ -169,13 +171,27 @@ const SearchReplaceForBlockEditor = (): JSX.Element => {
 		}
 
 		// Prepare raw string pattern.
-		const rawPattern = `(?<!<[^>]*)${ searchInput }(?<![^>]*<)`;
+		const rawPattern = getPattern(
+			isRegexExpression ? searchInput : escapeRegex( searchInput )
+		);
+
+		// Is Search case sensitive.
+		const isSearchCaseSensitive =
+			ifIsCaseSensitiveBasedOnFilter() || isCaseSensitive ? 'g' : 'gi';
+
+		// Define pattern.
+		let regexPattern: RegExp;
 
 		// Get Regex search pattern.
-		const regexPattern: RegExp = new RegExp(
-			rawPattern,
-			ifIsCaseSensitiveBasedOnFilter() || isCaseSensitive ? 'g' : 'gi'
-		);
+		try {
+			regexPattern = new RegExp( rawPattern, isSearchCaseSensitive );
+		} catch ( error ) {
+			// fallback to non-regex pattern.
+			regexPattern = new RegExp(
+				getPattern( escapeRegex( searchInput ) ),
+				isSearchCaseSensitive
+			);
+		}
 
 		/**
 		 * Filter the way we set the pattern, let users

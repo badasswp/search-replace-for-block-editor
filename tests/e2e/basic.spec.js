@@ -265,10 +265,11 @@ test.describe( 'Search & Replace', () => {
 		await page.getByRole( 'textbox', { name: 'Replace' } ).fill( 'hello' );
 
 		// Check the match case toggle.
-		await expect(
-			page.getByRole( 'checkbox', { name: 'Match case' } )
-		).toBeVisible();
-		await page.getByRole( 'checkbox', { name: 'Match case' } ).click();
+		const matchCase = page.getByRole( 'checkbox', { name: 'Match case' } );
+		await expect( matchCase ).toBeVisible();
+		if ( ! ( await matchCase.isChecked() ) ) {
+			await matchCase.click();
+		}
 
 		// Replace text.
 		await expect(
@@ -308,17 +309,19 @@ test.describe( 'Search & Replace', () => {
 			} )
 		).toBeVisible();
 
-		// Enable Case Matching
-		await expect(
-			page.locator( 'input[name="case_matching"]' )
-		).toBeVisible();
-		await page.locator( 'input[name="case_matching"]' ).click();
+		// Enable Case Matching.
+		const matchCase = page.locator( 'input[name="case_matching"]' );
+		await expect( matchCase ).toBeVisible();
+		if ( ! ( await matchCase.isChecked() ) ) {
+			await matchCase.click();
+		}
 
-		// Enable Regex Matching
-		await expect(
-			page.locator( 'input[name="regex_matching"]' )
-		).toBeVisible();
-		await page.locator( 'input[name="regex_matching"]' ).click();
+		// Enable Regex Matching.
+		const matchRegex = page.locator( 'input[name="regex_matching"]' );
+		await expect( matchRegex ).toBeVisible();
+		if ( ! ( await matchRegex.isChecked() ) ) {
+			await matchRegex.click();
+		}
 
 		// Save plugin options.
 		await page.getByRole( 'button', { name: 'Save Changes' } ).click();
@@ -329,6 +332,9 @@ test.describe( 'Search & Replace', () => {
 			.getByLabel( 'Main menu', { exact: true } )
 			.getByRole( 'link', { name: 'Add Post' } )
 			.click();
+
+		await expect( closeIcon ).toBeVisible();
+		await closeIcon.click();
 
 		// Click Plugin icon.
 		await expect(

@@ -60,6 +60,7 @@ Want to add your personal touch? All of our documentation can be found [here](ht
 3. Match Case in Search & Replace - Now you can match the case of the text and Search and Replace.
 4. Search & Replace icon in Toolbar - For a faster workflow you can use the toolbar icon in the Toolbar.
 5. Search & Replace Toolbar icon in action - Make changes a lot quicker and get more done in less time.
+6. Plugin Options page - Configure default settings for Search and Replace.
 
 == Changelog ==
 

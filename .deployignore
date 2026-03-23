@@ -18,3 +18,4 @@ bin
 phpcs.xml
 playwright.config.js
 playwright.setup.js
+phpunit.xml

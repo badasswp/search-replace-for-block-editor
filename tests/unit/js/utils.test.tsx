@@ -11,7 +11,7 @@ describe( 'getAllowedBlocks', () => {
 	} );
 
 	it( 'getAllowedBlocks passes and returns default Text Blocks', () => {
-		const { getAllowedBlocks } = require( '../src/core/utils' );
+		const { getAllowedBlocks } = require( '../../../src/core/utils' );
 
 		const blocks = getAllowedBlocks();
 
@@ -45,7 +45,7 @@ describe( 'getAllowedBlocks', () => {
 			] ),
 		} ) );
 
-		const { getAllowedBlocks } = require( '../src/core/utils' );
+		const { getAllowedBlocks } = require( '../../../src/core/utils' );
 
 		const blocks = getAllowedBlocks();
 
@@ -76,7 +76,7 @@ describe( 'getTextBlocks', () => {
 			] ),
 		} ) );
 
-		const { getTextBlocks } = require( '../src/core/utils' );
+		const { getTextBlocks } = require( '../../../src/core/utils' );
 
 		const blocks = getTextBlocks();
 
@@ -105,7 +105,7 @@ describe( 'getTextBlocks', () => {
 			] ),
 		} ) );
 
-		const { getTextBlocks } = require( '../src/core/utils' );
+		const { getTextBlocks } = require( '../../../src/core/utils' );
 
 		const blocks = getTextBlocks();
 
@@ -117,7 +117,7 @@ describe( 'getTextBlocks', () => {
 			getBlockTypes: jest.fn( () => [] ),
 		} ) );
 
-		const { getTextBlocks } = require( '../src/core/utils' );
+		const { getTextBlocks } = require( '../../../src/core/utils' );
 
 		const blocks = getTextBlocks();
 
@@ -147,13 +147,13 @@ describe( 'getShortcut', () => {
 	} );
 
 	it( 'getShorcut passes and returns default Shortcut', () => {
-		const { getShortcut } = require( '../src/core/utils' );
+		const { getShortcut } = require( '../../../src/core/utils' );
 
 		const shortcut = getShortcut();
 
 		expect( shortcut ).toEqual( {
 			character: 'f',
-			modifier: 'primaryShift',
+			modifier: 'primary',
 		} );
 	} );
 
@@ -167,7 +167,7 @@ describe( 'getShortcut', () => {
 			applyFilters: jest.fn( () => ( { ...filter } ) ),
 		} ) );
 
-		const { getShortcut } = require( '../src/core/utils' );
+		const { getShortcut } = require( '../../../src/core/utils' );
 
 		const shortcut = getShortcut();
 
@@ -184,7 +184,7 @@ describe( 'getAppRoot', () => {
 	} );
 
 	it( 'getAppRoot returns an instance of HTMLDivElement', () => {
-		const { getAppRoot } = require( '../src/core/utils' );
+		const { getAppRoot } = require( '../../../src/core/utils' );
 
 		const parent: HTMLElement = document.createElement( 'div' );
 		const root = getAppRoot( parent );
@@ -201,7 +201,7 @@ describe( 'isSelectionModal', () => {
 	} );
 
 	it( 'isSelectionInModal returns false by default if Selection is not made', () => {
-		const { isSelectionInModal } = require( '../src/core/utils' );
+		const { isSelectionInModal } = require( '../../../src/core/utils' );
 
 		const status = isSelectionInModal();
 
@@ -216,13 +216,22 @@ describe( 'getBlockEditorIframe', () => {
 	} );
 
 	it( 'getBlockEditorIframe returns an instance of Document', () => {
-		const { getBlockEditorIframe } = require( '../src/core/utils' );
+		const { getBlockEditorIframe } = require( '../../../src/core/utils' );
 
 		const iframe = getBlockEditorIframe();
 
 		expect( iframe ).toBeInstanceOf( Document );
 	} );
 } );
+
+const localizedValues = {
+	postType: 'post',
+	isShortcutEnabled: true,
+	isCaseMatchingEnabled: false,
+	isRegexMatchingEnabled: false,
+	isCloseModalEnabled: false,
+	isSavePostEnabled: false,
+};
 
 describe( 'isWpVersionGreaterThanOrEqualTo', () => {
 	beforeEach( () => {
@@ -232,11 +241,12 @@ describe( 'isWpVersionGreaterThanOrEqualTo', () => {
 	it( 'isWpVersionGreaterThanOrEqualTo returns true if WP version is up to or above passed in arg version', () => {
 		window.srfbe = {
 			wpVersion: '6.7.2',
+			...localizedValues,
 		};
 
 		const {
 			isWpVersionGreaterThanOrEqualTo,
-		} = require( '../src/core/utils' );
+		} = require( '../../../src/core/utils' );
 
 		const status = isWpVersionGreaterThanOrEqualTo( '6.7.0' );
 
@@ -247,11 +257,12 @@ describe( 'isWpVersionGreaterThanOrEqualTo', () => {
 	it( 'isWpVersionGreaterThanOrEqualTo returns false if WP version is not up to passed in arg version', () => {
 		window.srfbe = {
 			wpVersion: '6.7.0',
+			...localizedValues,
 		};
 
 		const {
 			isWpVersionGreaterThanOrEqualTo,
-		} = require( '../src/core/utils' );
+		} = require( '../../../src/core/utils' );
 
 		const status = isWpVersionGreaterThanOrEqualTo( '6.7.1' );
 
@@ -262,11 +273,12 @@ describe( 'isWpVersionGreaterThanOrEqualTo', () => {
 	it( 'isWpVersionGreaterThanOrEqualTo returns false if param version number is not valid', () => {
 		window.srfbe = {
 			wpVersion: '2.3',
+			...localizedValues,
 		};
 
 		const {
 			isWpVersionGreaterThanOrEqualTo,
-		} = require( '../src/core/utils' );
+		} = require( '../../../src/core/utils' );
 
 		const status = isWpVersionGreaterThanOrEqualTo( '6.7' );
 
@@ -277,11 +289,12 @@ describe( 'isWpVersionGreaterThanOrEqualTo', () => {
 	it( 'isWpVersionGreaterThanOrEqualTo returns true if one of params has version number without dot notation but is equal to or greater than version number', () => {
 		window.srfbe = {
 			wpVersion: '67',
+			...localizedValues,
 		};
 
 		const {
 			isWpVersionGreaterThanOrEqualTo,
-		} = require( '../src/core/utils' );
+		} = require( '../../../src/core/utils' );
 
 		const status = isWpVersionGreaterThanOrEqualTo( '6.3.2' );
 
@@ -292,11 +305,12 @@ describe( 'isWpVersionGreaterThanOrEqualTo', () => {
 	it( 'isWpVersionGreaterThanOrEqualTo returns true if one of params has version number with single dot notation but is equal to or greater than version number', () => {
 		window.srfbe = {
 			wpVersion: '6.8',
+			...localizedValues,
 		};
 
 		const {
 			isWpVersionGreaterThanOrEqualTo,
-		} = require( '../src/core/utils' );
+		} = require( '../../../src/core/utils' );
 
 		const status = isWpVersionGreaterThanOrEqualTo( '6.3.2' );
 
@@ -307,7 +321,7 @@ describe( 'isWpVersionGreaterThanOrEqualTo', () => {
 	it( 'isWpVersionGreaterThanOrEqualTo returns false if param is not string', () => {
 		const {
 			isWpVersionGreaterThanOrEqualTo,
-		} = require( '../src/core/utils' );
+		} = require( '../../../src/core/utils' );
 
 		const status = isWpVersionGreaterThanOrEqualTo( 7 );
 
@@ -322,7 +336,7 @@ describe( 'getNumberToBase10', () => {
 	} );
 
 	it( 'getNumberToBase10 returns the correct Radix', () => {
-		const { getNumberToBase10 } = require( '../src/core/utils' );
+		const { getNumberToBase10 } = require( '../../../src/core/utils' );
 
 		const radix = getNumberToBase10( [ 5, 6, 1 ] );
 
@@ -331,7 +345,7 @@ describe( 'getNumberToBase10', () => {
 	} );
 
 	it( 'getNumberToBase10 receives non-array param and returns zero', () => {
-		const { getNumberToBase10 } = require( '../src/core/utils' );
+		const { getNumberToBase10 } = require( '../../../src/core/utils' );
 
 		const radix = getNumberToBase10( 'non-array' );
 
@@ -340,7 +354,7 @@ describe( 'getNumberToBase10', () => {
 	} );
 
 	it( 'getNumberToBase10 receives mixed array type and returns zero', () => {
-		const { getNumberToBase10 } = require( '../src/core/utils' );
+		const { getNumberToBase10 } = require( '../../../src/core/utils' );
 
 		const radix = getNumberToBase10( [ 1, 'zero', 2 ] );
 
@@ -355,7 +369,7 @@ describe( 'getFallbackTextBlocks', () => {
 	} );
 
 	it( 'getFallbackTextBlocks gets array of default fallback text blocks', () => {
-		const { getFallbackTextBlocks } = require( '../src/core/utils' );
+		const { getFallbackTextBlocks } = require( '../../../src/core/utils' );
 
 		const fallbackTextBlocks = getFallbackTextBlocks();
 
@@ -370,10 +384,44 @@ describe( 'getShortcutEvent', () => {
 	} );
 
 	it( 'getShorcutEvent returns the instance of a Keyboard Event', () => {
-		const { getShortcutEvent } = require( '../src/core/utils' );
+		const { getShortcutEvent } = require( '../../../src/core/utils' );
 
 		const shortcutEvent = getShortcutEvent();
 
 		expect( shortcutEvent ).toBeInstanceOf( KeyboardEvent );
+	} );
+} );
+
+describe( 'escapeRegex', () => {
+	beforeEach( () => {
+		jest.resetModules();
+	} );
+
+	it( 'escapeRegex escapes regex metacharacters', () => {
+		const { escapeRegex } = require( '../../../src/core/utils' );
+
+		const escaped = escapeRegex( 'a.b+c*^$()[]{}|\\' );
+
+		expect( escaped ).toBe( 'a\\.b\\+c\\*\\^\\$\\(\\)\\[\\]\\{\\}\\|\\\\' );
+	} );
+
+	it( 'escapeRegex leaves plain text unchanged', () => {
+		const { escapeRegex } = require( '../../../src/core/utils' );
+
+		const escaped = escapeRegex( 'plain text' );
+
+		expect( escaped ).toBe( 'plain text' );
+	} );
+
+	it( 'escapeRegex returns empty string for non-string inputs', () => {
+		const { escapeRegex } = require( '../../../src/core/utils' );
+
+		expect( escapeRegex( 123 ) ).toBe( '' );
+	} );
+
+	it( 'escapeRegex returns empty string for empty input', () => {
+		const { escapeRegex } = require( '../../../src/core/utils' );
+
+		expect( escapeRegex( '' ) ).toBe( '' );
 	} );
 } );

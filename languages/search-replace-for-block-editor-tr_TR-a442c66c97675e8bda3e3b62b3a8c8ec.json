@@ -1,0 +1,27 @@
+{
+  "translation-revision-date": "2026-03-12 10:03+0100",
+  "generator": "WP-CLI/2.6.0",
+  "source": "dist/app.js",
+  "domain": "messages",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "tr_TR",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Search & Replace": [
+        "Ara ve Değiştir"
+      ],
+      "item(s) replaced successfully": [
+        "öğe başarıyla değiştirildi"
+      ],
+      "Match case": [
+        "Büyük/küçük harf duyarlı"
+      ],
+      "Use regular expression": [
+        "Düzenli ifade kullan"
+      ]
+    }
+  }
+}

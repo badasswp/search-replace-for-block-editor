@@ -28,6 +28,9 @@
 
 		&__toggle {
 			padding: 1.6em 0;
+			gap: 10px;
+			display: flex;
+			flex-direction: column;
 		}
 
 		&__notification {

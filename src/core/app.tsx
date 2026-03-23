@@ -13,9 +13,11 @@ import {
 
 import { Shortcut } from './shortcut';
 import {
+	getPattern,
+	escapeRegex,
 	getAllowedBlocks,
 	getBlockEditorIframe,
-	isCaseSensitive,
+	ifIsCaseSensitiveBasedOnFilter,
 	isSelectionInModal,
 	isWpVersionGreaterThanOrEqualTo,
 } from './utils';
@@ -33,12 +35,27 @@ import '../styles/app.scss';
  * @return {JSX.Element} Search & Replace for Block Editor.
  */
 const SearchReplaceForBlockEditor = (): JSX.Element => {
+	const {
+		isShortcutEnabled,
+		isCaseMatchingEnabled,
+		isRegexMatchingEnabled,
+		isCloseModalEnabled,
+		isSavePostEnabled,
+	} = srfbe;
+
 	const [ replacements, setReplacements ] = useState< number >( 0 );
 	const [ isModalVisible, setIsModalVisible ] = useState< boolean >( false );
+	const [ context, setContext ] = useState< boolean >( false );
 	const [ searchInput, setSearchInput ] = useState< string >( '' );
 	const [ replaceInput, setReplaceInput ] = useState< string >( '' );
-	const [ caseSensitive, setCaseSensitive ] = useState< boolean >( false );
-	const [ context, setContext ] = useState< boolean >( false );
+
+	// Toggles.
+	const [ isCaseSensitive, setIsCaseSensitive ] = useState< boolean >(
+		isCaseMatchingEnabled
+	);
+	const [ isRegexExpression, setIsRegexExpression ] = useState< boolean >(
+		isRegexMatchingEnabled
+	);
 
 	// Reference to the first field inside the modal.
 	const searchFieldRef = useRef< HTMLInputElement | null >( null );
@@ -87,8 +104,22 @@ const SearchReplaceForBlockEditor = (): JSX.Element => {
 	 * @param {boolean} newValue
 	 * @return {void}
 	 */
-	const handleCaseSensitive = ( newValue: boolean ): void => {
-		setCaseSensitive( newValue );
+	const handleCaseToggle = ( newValue: boolean ): void => {
+		setIsCaseSensitive( newValue );
+	};
+
+	/**
+	 * Handle regex-expression toggle feature
+	 * to enable user perform regex-enabled search
+	 * and replacements.
+	 *
+	 * @since 1.10.0
+	 *
+	 * @param {boolean} newValue
+	 * @return {void}
+	 */
+	const handleRegexToggle = ( newValue: boolean ): void => {
+		setIsRegexExpression( newValue );
 	};
 
 	/**
@@ -102,7 +133,7 @@ const SearchReplaceForBlockEditor = (): JSX.Element => {
 	useEffect( () => {
 		replace();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [ searchInput, caseSensitive ] );
+	}, [ searchInput, isCaseSensitive, isRegexExpression ] );
 
 	/**
 	 * Modal Focus.
@@ -139,16 +170,110 @@ const SearchReplaceForBlockEditor = (): JSX.Element => {
 			return;
 		}
 
-		const pattern: RegExp = new RegExp(
-			`(?<!<[^>]*)${ searchInput }(?<![^>]*<)`,
-			isCaseSensitive() || caseSensitive ? 'g' : 'gi'
+		// Prepare raw string pattern.
+		const rawPattern = getPattern(
+			isRegexExpression ? searchInput : escapeRegex( searchInput )
 		);
+
+		// Is Search case sensitive.
+		const isSearchCaseSensitive =
+			ifIsCaseSensitiveBasedOnFilter() || isCaseSensitive ? 'g' : 'gi';
+
+		// Define pattern.
+		let regexPattern: RegExp;
+
+		// Get Regex search pattern.
+		try {
+			regexPattern = new RegExp( rawPattern, isSearchCaseSensitive );
+		} catch ( error ) {
+			// fallback to non-regex pattern.
+			regexPattern = new RegExp(
+				getPattern( escapeRegex( searchInput ) ),
+				isSearchCaseSensitive
+			);
+		}
+
+		/**
+		 * Filter the way we set the pattern, let users
+		 * customise their search pattern here.
+		 *
+		 * @since 1.10.0
+		 *
+		 * @param {RegExp} regexPattern Regex search pattern.
+		 * @param {string} rawPattern   Raw string pattern to be searched.
+		 * @param {Object} Params       Params containing `searchInput`, `replaceInput`, `status`,
+		 *                              `isCaseSensitive`, `isRegexExpression`, & `srfbe`.
+		 *
+		 * @return {RegExp} Filtered Search pattern.
+		 */
+		const pattern = applyFilters(
+			'search-replace-for-block-editor.regexPattern',
+			regexPattern,
+			rawPattern,
+			{
+				searchInput,
+				replaceInput,
+				status,
+				isCaseSensitive,
+				isRegexExpression,
+				srfbe,
+			}
+		) as RegExp;
 
 		select( 'core/block-editor' )
 			.getBlocks()
 			.forEach( ( element: any ) => {
-				recursivelyReplace( element, pattern, replaceInput, status );
+				recursivelyReplace( element, pattern, status );
 			} );
+
+		if ( status && isSavePostEnabled ) {
+			( dispatch( 'core/editor' ) as any ).savePost();
+		}
+
+		if ( status && isCloseModalEnabled ) {
+			closeModal();
+
+			// Let the user know, since you're closing the modal.
+			( dispatch( 'core/notices' ) as any ).createSuccessNotice(
+				`${ replacements } item(s) replaced successfully.`,
+				{
+					id: 'srfbe-id',
+					isDismissible: true,
+					type: 'default',
+				}
+			);
+		}
+
+		/**
+		 * After Search & Replace.
+		 *
+		 * Fires after the search & replace
+		 * activity is completed.
+		 *
+		 * @since 1.10.0
+		 *
+		 * @param {Object}  params            Params.
+		 * @param {number}  replacements      Number of replacements (or searches if status is false).
+		 * @param {string}  searchInput       The search input string.
+		 * @param {string}  replaceInput      The replace input string.
+		 * @param {RegExp}  pattern           The regex expression pattern.
+		 * @param {boolean} status            The context (true for replacements, false for searches).
+		 * @param {boolean} isCaseSensitive   Is search & replace operation case sensitive.
+		 * @param {boolean} isRegexExpression Is search & replace operation regex based.
+		 * @param {Object}  srfbe             Localized values passed to JS.
+		 *
+		 * @return {void}
+		 */
+		doAction( 'search-replace-for-block-editor.afterSearchReplace', {
+			replacements,
+			searchInput,
+			replaceInput,
+			pattern,
+			status,
+			isCaseSensitive,
+			isRegexExpression,
+			srfbe,
+		} );
 	};
 
 	/**
@@ -162,7 +287,6 @@ const SearchReplaceForBlockEditor = (): JSX.Element => {
 	 *
 	 * @param {any}     element Gutenberg editor block.
 	 * @param {RegExp}  pattern Search pattern.
-	 * @param {string}  text    Replace pattern.
 	 * @param {boolean} status  True (Replace), False (Search).
 	 *
 	 * @return {void}
@@ -170,13 +294,12 @@ const SearchReplaceForBlockEditor = (): JSX.Element => {
 	const recursivelyReplace = (
 		element: any,
 		pattern: RegExp,
-		text: string,
 		status: boolean
 	): void => {
 		const { name, innerBlocks } = element;
 
 		if ( getAllowedBlocks().indexOf( name ) !== -1 ) {
-			const args = { element, pattern, text, status };
+			const args = { element, pattern, status };
 
 			/**
 			 * Replace Block Attribute.
@@ -201,7 +324,7 @@ const SearchReplaceForBlockEditor = (): JSX.Element => {
 
 		if ( innerBlocks.length ) {
 			innerBlocks.forEach( ( innerElement: any ) => {
-				recursivelyReplace( innerElement, pattern, text, status );
+				recursivelyReplace( innerElement, pattern, status );
 			} );
 		}
 	};
@@ -222,7 +345,6 @@ const SearchReplaceForBlockEditor = (): JSX.Element => {
 		const property = {};
 		const {
 			pattern,
-			text,
 			element: { attributes, clientId, name },
 			status,
 		} = args;
@@ -244,7 +366,7 @@ const SearchReplaceForBlockEditor = (): JSX.Element => {
 		 */
 		const handleAttributeReplacement = (): string => {
 			setReplacements( ( items: number ) => items + 1 );
-			return text;
+			return replaceInput;
 		};
 
 		/**
@@ -339,10 +461,18 @@ const SearchReplaceForBlockEditor = (): JSX.Element => {
 	 * @since 1.4.0
 	 * @return {JSX.Element|null} Shortcut.
 	 */
-	const SafeShortcut = (): JSX.Element | null =>
-		isWpVersionGreaterThanOrEqualTo( '6.4.0' ) ? (
-			<Shortcut onKeyDown={ openModal } />
-		) : null;
+	const SafeShortcut = (): JSX.Element | null => {
+		if ( ! isWpVersionGreaterThanOrEqualTo( '6.4.0' ) ) {
+			return null;
+		}
+
+		// Enable by default (set true, if null).
+		if ( isShortcutEnabled || null === isShortcutEnabled ) {
+			return <Shortcut onKeyDown={ openModal } />;
+		}
+
+		return null;
+	};
 
 	return (
 		<>
@@ -395,11 +525,20 @@ const SearchReplaceForBlockEditor = (): JSX.Element => {
 					<div id="search-replace-modal__toggle">
 						<ToggleControl
 							label={ __(
-								'Match Case | Expression',
+								'Match case',
 								'search-replace-for-block-editor'
 							) }
-							checked={ caseSensitive }
-							onChange={ handleCaseSensitive }
+							checked={ !! isCaseSensitive }
+							onChange={ handleCaseToggle }
+							__nextHasNoMarginBottom
+						/>
+						<ToggleControl
+							label={ __(
+								'Use regular expression',
+								'search-replace-for-block-editor'
+							) }
+							checked={ !! isRegexExpression }
+							onChange={ handleRegexToggle }
 							__nextHasNoMarginBottom
 						/>
 					</div>

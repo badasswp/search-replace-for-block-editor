@@ -1,0 +1,139 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Search and Replace for Block Editor\n"
+"POT-Creation-Date: 2024-07-2 00:00+0100\n"
+"PO-Revision-Date: 2026-03-12 10:03+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: id_ID\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Domain: search-replace-for-block-editor\n"
+"X-Generator: Poedit 3.8\n"
+
+#. Plugin Name
+msgid "Search and Replace for Block Editor"
+msgstr "Cari dan Ganti di Block Editor"
+
+#. Plugin URI
+msgid "https://github.com/badasswp/search-and-replace"
+msgstr "https://github.com/badasswp/search-and-replace"
+
+#. Description
+msgid "Search and replace text within the Block Editor."
+msgstr "Cari dan ganti teks di dalam Block Editor."
+
+#. Description
+msgid "Search & Replace for Block Editor"
+msgstr "Cari dan Ganti di Block Editor"
+
+#. Author
+msgid "badasswp"
+msgstr "badasswp"
+
+#. Author URI
+msgid "https://github.com/badasswp"
+msgstr "https://github.com/badasswp"
+
+#. dist/app.js
+msgid "Search & Replace"
+msgstr "Cari dan Ganti"
+
+#. Search
+msgid "Search"
+msgstr "Cari"
+
+#. Replace
+msgid "Replace"
+msgstr "Ganti"
+
+#. Done
+msgid "Done"
+msgstr "Selesai"
+
+#. Actions
+msgid "Actions"
+msgstr "Tindakan"
+
+#. Case Matching
+msgid "Case Matching"
+msgstr "Pencocokan Huruf"
+
+#. Enable Case Matching toggle by default.
+msgid "Enable Case Matching toggle by default."
+msgstr "Aktifkan pencocokan huruf besar/kecil secara default."
+
+#. Regex Matching
+msgid "Regex Matching"
+msgstr "Pencocokan Regex"
+
+#. Enable Regex Matching toggle by default.
+msgid "Enable Regex Matching toggle by default."
+msgstr "Aktifkan pencocokan Regex secara default."
+
+#. Save Post
+msgid "Save Post"
+msgstr "Simpan Postingan"
+
+#. Save Changes
+msgid "Save Changes"
+msgstr "Simpan Perubahan"
+
+#. Toggle Options
+msgid "Toggle Options"
+msgstr "Tampilkan/Sembunyikan Opsi"
+
+#. Other Options
+msgid "Other Options"
+msgstr "Opsi Lainnya"
+
+#. Settings Saved.
+msgid "Settings Saved."
+msgstr "Pengaturan disimpan."
+
+#. Perform save after search & replace is completed.
+msgid "Perform save after search & replace is completed."
+msgstr "Simpan setelah cari dan ganti selesai."
+
+#. Close Modal
+msgid "Close Modal"
+msgstr "Tutup Jendela"
+
+#. Close modal after search & replace is completed.
+msgid "Close modal after search & replace is completed."
+msgstr "Tutup jendela setelah cari dan ganti selesai."
+
+#. Use Shortcut
+msgid "Use Shortcut"
+msgstr "Gunakan Pintasan"
+
+#. Enable Shortcut (CMD + F).
+msgid "Enable Shortcut (CMD + F)."
+msgstr "Aktifkan pintasan (CMD + F)."
+
+#. Word Matching
+msgid "Word Matching"
+msgstr "Pencocokan Kata"
+
+#. Word Matching label
+msgid ""
+"Perform search & replace only for words which are not surrounded by any text"
+" or string."
+msgstr ""
+"Lakukan cari dan ganti hanya untuk kata yang tidak dikelilingi teks atau "
+"string."
+
+#. dist/app.js
+msgid "item(s) replaced successfully"
+msgstr "item berhasil diganti"
+
+#. dist/app.js
+msgid "Match case"
+msgstr "Cocokkan huruf besar/kecil"
+
+#. dist/app.js
+msgid "Use regular expression"
+msgstr "Gunakan ekspresi reguler"

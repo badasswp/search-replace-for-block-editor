@@ -40,11 +40,13 @@ export const getAllowedBlocks = (): string[] => {
  * @return {string[]} List of Text Blocks.
  */
 export const getTextBlocks = (): string[] => {
+	type BlockType = ReturnType< typeof getBlockTypes >[ number ];
+
 	const textBlocks = getBlockTypes()
-		.filter( ( block ) => {
+		.filter( ( block: BlockType ) => {
 			return !! ( block?.category === 'text' );
 		} )
-		.map( ( block ) => {
+		.map( ( block: BlockType ) => {
 			return block?.name;
 		} );
 
@@ -90,7 +92,7 @@ export const getShortcut = (): { modifier: string; character: string } => {
 	 */
 	return applyFilters(
 		'search-replace-for-block-editor.keyboardShortcut',
-		options.SHIFT
+		options.CMD
 	) as { modifier: string; character: string };
 };
 
@@ -102,7 +104,7 @@ export const getShortcut = (): { modifier: string; character: string } => {
  *
  * @return {boolean} Is Case Sensitive.
  */
-export const isCaseSensitive = (): boolean => {
+export const ifIsCaseSensitiveBasedOnFilter = (): boolean => {
 	/**
 	 * Filter Case Sensitivity.
 	 *
@@ -350,9 +352,79 @@ export const getShortcutEvent = (): KeyboardEvent => {
 		code: 'KeyF',
 		keyCode: 70,
 		charCode: 70,
-		shiftKey: true,
 		metaKey: true,
 		ctrlKey: navigator.platform.includes( 'Mac' ) ? false : true,
 		bubbles: true,
 	} );
 };
+
+/**
+ * Is Allowed for Post type.
+ *
+ * This function checkes to see that the plugin
+ * is allowed for a specific post type.
+ *
+ * @since 1.10.0
+ *
+ * @return {boolean} True/false.
+ */
+export const isAllowedForPostType = (): boolean => {
+	const { postType } = srfbe;
+
+	// Bail out, if undefined.
+	if ( ! postType ) {
+		return false;
+	}
+
+	/**
+	 * Filter if a Post has access to
+	 * Search & Replace app.
+	 *
+	 * @since 1.10.0
+	 *
+	 * @param {string[]} excludedPostTypes Excluded Post types.
+	 * @return {string[]}
+	 */
+	const excludedPostTypes = applyFilters(
+		'search-replace-for-block-editor.excludedPostTypes',
+		[]
+	) as string[];
+
+	// Bail out, if excluded.
+	if ( excludedPostTypes.includes( postType ) ) {
+		return false;
+	}
+
+	return true;
+};
+
+/**
+ * Escape user input for safe
+ * literal RegExp usage.
+ *
+ * @since 1.10.0
+ *
+ * @param {string} value Raw user input.
+ * @return {string} Escaped input.
+ */
+export const escapeRegex = ( value: string ): string => {
+	if ( typeof value !== 'string' ) {
+		return '';
+	}
+
+	return value.replace( /[.*+?^${}()|[\]\\]/g, '\\$&' );
+};
+
+/**
+ * Get Search Pattern.
+ *
+ * This function returns a string pattern
+ * that targets only texts within valid HTML markup.
+ *
+ * @since 1.10.0
+ *
+ * @param {string} searchText Search Text.
+ * @return {string} Search Pattern.
+ */
+export const getPattern = ( searchText: string ): string =>
+	`(?<!<[^>]*)${ searchText }(?<![^>]*<)`;

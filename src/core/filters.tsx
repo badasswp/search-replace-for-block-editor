@@ -73,7 +73,7 @@ addFilter(
 				);
 
 				return {
-					newAttr: JSON.parse( tableString ),
+					newAttr: JSON.parse( tableString || '{}' ),
 					isChanged: tableString !== JSON.stringify( oldAttr ),
 				};
 

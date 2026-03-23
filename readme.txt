@@ -1,9 +1,9 @@
 === Search and Replace for Block Editor ===
-Contributors: badasswp, rajanand346, jargovi
+Contributors: badasswp, rajanand346, jargovi, activist507
 Tags: search, replace, text, block, editor.
 Requires at least: 6.0
 Tested up to: 6.9
-Stable tag: 1.9.0
+Stable tag: 1.10.0
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -51,7 +51,7 @@ You can also <strong>select text</strong> on your Block Editor and <strong>use t
 
 The Search & Replace for Block Editor plugin is built to work right out of the box. Simply install, activate and start using.
 
-Want to add your personal touch? All of our documentation can be found [here](https://github.com/badasswp/search-and-replace). You can override the plugin's behaviour with custom logic of your own using [hooks](https://github.com/badasswp/search-and-replace?tab=readme-ov-file#hooks).
+Want to add your personal touch? All of our documentation can be found [here](https://github.com/badasswp/search-replace-for-block-editor). You can override the plugin's behaviour with custom logic of your own using [hooks](https://github.com/badasswp/search-replace-for-block-editor?tab=readme-ov-file#hooks).
 
 == Screenshots ==
 
@@ -62,6 +62,17 @@ Want to add your personal touch? All of our documentation can be found [here](ht
 5. Search & Replace Toolbar icon in action - Make changes a lot quicker and get more done in less time.
 
 == Changelog ==
+
+= 1.10.0 =
+* Feat: Added translation languages for `Japanese`,`Indonesian`, `Turkish`, `Polish`, `Dutch`, `Brazil` and `Portuguese`.
+* Feat: Add toggle for Regex expression matching.
+* Feat: Add Plugin options page.
+* Feat: Add Shortcut command (CMD + F).
+* Feat: Add custom hooks: `afterSearchReplace`, `excludedPostTypes`, `regexPattern`.
+* Fix: Make default search literal & regex opt-in.
+* Refactor: Use `replaceInput` in place of repeated instances of `text`.
+* Test: Add e2e tests for plugin codebase.
+* Tested up to WP 6.9.
 
 = 1.9.0 =
 * Feat: Use Composer setup for plugin.
@@ -174,6 +185,6 @@ Want to add your personal touch? All of our documentation can be found [here](ht
 
 == Contribute ==
 
-If you'd like to contribute to the development of this plugin, you can find it on [GitHub](https://github.com/badasswp/search-and-replace).
+If you'd like to contribute to the development of this plugin, you can find it on [GitHub](https://github.com/badasswp/search-replace-for-block-editor).
 
 To build, clone repo and run `npm install && npm run build`

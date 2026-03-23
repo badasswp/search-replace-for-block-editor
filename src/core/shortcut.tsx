@@ -17,7 +17,11 @@ import { getShortcut } from './utils';
  *
  * @return {JSX.Element|null} Shortcut.
  */
-export const Shortcut = ( { onKeyDown } ): JSX.Element | null => {
+export const Shortcut = ( {
+	onKeyDown,
+}: {
+	onKeyDown: Function;
+} ): JSX.Element | null => {
 	const dispatch = useDispatch();
 
 	dispatch( 'core/keyboard-shortcuts' ).registerShortcut( {
@@ -29,7 +33,8 @@ export const Shortcut = ( { onKeyDown } ): JSX.Element | null => {
 
 	useShortcut(
 		'search-replace-for-block-editor/shortcut',
-		useCallback( () => {
+		useCallback( ( event: any ) => {
+			event.preventDefault();
 			onKeyDown();
 			// eslint-disable-next-line react-hooks/exhaustive-deps
 		}, [] )

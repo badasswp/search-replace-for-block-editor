@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.10.0
+* Feat: Added translation languages for `Japanese`,`Indonesian`, `Turkish`, `Polish`, `Dutch`, `Brazil` and `Portuguese`.
+* Feat: Add toggle for Regex expression matching.
+* Feat: Add Plugin options page.
+* Feat: Add Shortcut command (CMD + F).
+* Feat: Add custom hooks: `afterSearchReplace`, `excludedPostTypes`, `regexPattern`.
+* Fix: Make default search literal & regex opt-in.
+* Refactor: Use `replaceInput` in place of repeated instances of `text`.
+* Test: Add e2e tests for plugin codebase.
+* Tested up to WP 6.9.
+
 ## 1.9.0
 * Feat: Use Composer setup for plugin.
 * Tested up to WP 6.9.

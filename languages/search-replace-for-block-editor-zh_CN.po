@@ -1,46 +1,44 @@
-# Copyright (C) badasswp
-# This file is distributed under the GPL v2 or later.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Search and Replace for Block Editor\n"
 "POT-Creation-Date: 2024-07-2 00:00+0100\n"
-"PO-Revision-Date: 2024-10-02 23:29+0100\n"
+"PO-Revision-Date: 2026-03-12 10:03+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Domain: search-replace-for-block-editor\n"
-"X-Generator: Poedit 3.5\n"
-"X-Poedit-Basepath: ..\n"
-"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
-"X-Poedit-WPHeader: search-replace-for-block-editor.php\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Generator: Poedit 3.8\n"
 
 #. Plugin Name
 msgid "Search and Replace for Block Editor"
-msgstr "搜索和替换块编辑器"
+msgstr "块编辑器搜索和替换"
 
 #. Plugin URI
 msgid "https://github.com/badasswp/search-and-replace"
 msgstr "https://github.com/badasswp/search-and-replace"
 
 #. Description
-msgid "Search and Replace text within the Block Editor."
+msgid "Search and replace text within the Block Editor."
 msgstr "在块编辑器中搜索和替换文本。"
+
+#. Description
+msgid "Search & Replace for Block Editor"
+msgstr "块编辑器搜索和替换"
 
 #. Author
 msgid "badasswp"
-msgstr "坏蛋"
+msgstr "badasswp"
 
 #. Author URI
 msgid "https://github.com/badasswp"
 msgstr "https://github.com/badasswp"
 
-#: dist/app.js
+#. dist/app.js
 msgid "Search & Replace"
 msgstr "搜索和替换"
 
@@ -56,10 +54,84 @@ msgstr "替换"
 msgid "Done"
 msgstr "完成"
 
-#. dist/app.js
-msgid "item(s) replaced successfully"
-msgstr "已成功更换的物品"
+#. Actions
+msgid "Actions"
+msgstr "操作"
+
+#. Case Matching
+msgid "Case Matching"
+msgstr "大小写匹配"
+
+#. Enable Case Matching toggle by default.
+msgid "Enable Case Matching toggle by default."
+msgstr "默认启用大小写匹配选项。"
+
+#. Regex Matching
+msgid "Regex Matching"
+msgstr "正则表达式匹配"
+
+#. Enable Regex Matching toggle by default.
+msgid "Enable Regex Matching toggle by default."
+msgstr "默认启用正则表达式匹配选项。"
+
+#. Save Post
+msgid "Save Post"
+msgstr "保存文章"
+
+#. Save Changes
+msgid "Save Changes"
+msgstr "保存更改"
+
+#. Toggle Options
+msgid "Toggle Options"
+msgstr "切换选项"
+
+#. Other Options
+msgid "Other Options"
+msgstr "其他选项"
+
+#. Settings Saved.
+msgid "Settings Saved."
+msgstr "设置已保存。"
+
+#. Perform save after search & replace is completed.
+msgid "Perform save after search & replace is completed."
+msgstr "搜索和替换完成后保存。"
+
+#. Close Modal
+msgid "Close Modal"
+msgstr "关闭窗口"
+
+#. Close modal after search & replace is completed.
+msgid "Close modal after search & replace is completed."
+msgstr "搜索和替换完成后关闭窗口。"
+
+#. Use Shortcut
+msgid "Use Shortcut"
+msgstr "使用快捷键"
+
+#. Enable Shortcut (CMD + F).
+msgid "Enable Shortcut (CMD + F)."
+msgstr "启用快捷键 (CMD + F)。"
+
+#. Word Matching
+msgid "Word Matching"
+msgstr "全词匹配"
+
+#. Word Matching label
+msgid ""
+"Perform search & replace only for words which are not surrounded by any text"
+" or string."
+msgstr "仅对未被任何文本或字符串包围的单词执行搜索和替换。"
 
 #. dist/app.js
-msgid "Match Case | Expression"
-msgstr "匹配案例 |表达"
+msgid "item(s) replaced successfully"
+msgstr "个项目替换成功"
+
+#. dist/app.js
+msgid "Match case"
+msgstr "区分大小写"
+
+#. dist/app.js
+msgid "Use regular expression"
+msgstr "使用正则表达式"

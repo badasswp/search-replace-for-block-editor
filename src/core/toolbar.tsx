@@ -29,7 +29,7 @@ export const SearchReplaceToolbarIcon = ( settings: any ): object => {
 	settings.edit = ( props: any ) => {
 		return (
 			<Fragment>
-				<BlockControls>
+				<BlockControls key="search-replace-toolbar">
 					<ToolbarGroup>
 						<ToolbarButton
 							icon={ search }
@@ -41,12 +41,11 @@ export const SearchReplaceToolbarIcon = ( settings: any ): object => {
 								'Search & Replace',
 								'search-replace-for-block-editor'
 							) }
-							onPointerEnterCapture={ () => {} }
-							onPointerLeaveCapture={ () => {} }
 						/>
 					</ToolbarGroup>
 				</BlockControls>
-				{ edit( props ) }
+
+				<div key="gutenberg-native-toolbar">{ edit( props ) }</div>
 			</Fragment>
 		);
 	};

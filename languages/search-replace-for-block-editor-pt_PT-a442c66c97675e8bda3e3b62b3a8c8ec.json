@@ -1,0 +1,27 @@
+{
+  "translation-revision-date": "2026-03-12 10:03+0100",
+  "generator": "WP-CLI/2.6.0",
+  "source": "dist/app.js",
+  "domain": "messages",
+  "locale_data": {
+    "messages": {
+      "": {
+        "domain": "messages",
+        "lang": "pt_PT",
+        "plural-forms": "nplurals=2; plural=(n != 1);"
+      },
+      "Search & Replace": [
+        "Pesquisar e Substituir"
+      ],
+      "item(s) replaced successfully": [
+        "item(ns) substituído(s) com sucesso"
+      ],
+      "Match case": [
+        "Distinguir maiúsculas e minúsculas"
+      ],
+      "Use regular expression": [
+        "Usar expressão regular"
+      ]
+    }
+  }
+}

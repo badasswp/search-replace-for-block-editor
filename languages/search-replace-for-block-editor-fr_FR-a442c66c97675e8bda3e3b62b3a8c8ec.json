@@ -1,23 +1,26 @@
 {
-  "translation-revision-date": "2024-07-02 09:32+0100",
-  "generator": "WP-CLI\/2.6.0",
-  "source": "dist\/app.js",
+  "translation-revision-date": "2026-03-12 10:03+0100",
+  "generator": "WP-CLI/2.6.0",
+  "source": "dist/app.js",
   "domain": "messages",
   "locale_data": {
     "messages": {
       "": {
         "domain": "messages",
         "lang": "fr_FR",
-        "plural-forms": "nplurals=2; plural=(n != 1);"
+        "plural-forms": "nplurals=2; plural=(n > 1);"
       },
       "Search & Replace": [
-        "Recherche & Remplace"
+        "Rechercher et Remplacer"
       ],
       "item(s) replaced successfully": [
-        "articles remplacés avec succès"
+        "élément(s) remplacé(s) avec succès"
       ],
-      "Match Case | Expression": [
-        "Cas de match | Expression"
+      "Match case": [
+        "Respecter la casse"
+      ],
+      "Use regular expression": [
+        "Utiliser une expression régulière"
       ]
     }
   }

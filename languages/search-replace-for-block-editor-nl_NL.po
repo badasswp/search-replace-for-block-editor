@@ -1,0 +1,139 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Search and Replace for Block Editor\n"
+"POT-Creation-Date: 2024-07-2 00:00+0100\n"
+"PO-Revision-Date: 2026-03-12 10:03+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: nl_NL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: search-replace-for-block-editor\n"
+"X-Generator: Poedit 3.8\n"
+
+#. Plugin Name
+msgid "Search and Replace for Block Editor"
+msgstr "Zoeken en Vervangen in de Blokken-editor"
+
+#. Plugin URI
+msgid "https://github.com/badasswp/search-and-replace"
+msgstr "https://github.com/badasswp/search-and-replace"
+
+#. Description
+msgid "Search and replace text within the Block Editor."
+msgstr "Zoek en vervang tekst in de Blokken-editor."
+
+#. Description
+msgid "Search & Replace for Block Editor"
+msgstr "Zoeken en Vervangen in de Blokken-editor"
+
+#. Author
+msgid "badasswp"
+msgstr "badasswp"
+
+#. Author URI
+msgid "https://github.com/badasswp"
+msgstr "https://github.com/badasswp"
+
+#. dist/app.js
+msgid "Search & Replace"
+msgstr "Zoeken en Vervangen"
+
+#. Search
+msgid "Search"
+msgstr "Zoeken"
+
+#. Replace
+msgid "Replace"
+msgstr "Vervangen"
+
+#. Done
+msgid "Done"
+msgstr "Klaar"
+
+#. Actions
+msgid "Actions"
+msgstr "Acties"
+
+#. Case Matching
+msgid "Case Matching"
+msgstr "Hoofdlettergevoelig"
+
+#. Enable Case Matching toggle by default.
+msgid "Enable Case Matching toggle by default."
+msgstr "Schakel hoofdlettergevoeligheid standaard in."
+
+#. Regex Matching
+msgid "Regex Matching"
+msgstr "Regex-overeenkomst"
+
+#. Enable Regex Matching toggle by default.
+msgid "Enable Regex Matching toggle by default."
+msgstr "Schakel Regex-overeenkomst standaard in."
+
+#. Save Post
+msgid "Save Post"
+msgstr "Bericht Opslaan"
+
+#. Save Changes
+msgid "Save Changes"
+msgstr "Wijzigingen Opslaan"
+
+#. Toggle Options
+msgid "Toggle Options"
+msgstr "Opties In-/Uitschakelen"
+
+#. Other Options
+msgid "Other Options"
+msgstr "Andere Opties"
+
+#. Settings Saved.
+msgid "Settings Saved."
+msgstr "Instellingen opgeslagen."
+
+#. Perform save after search & replace is completed.
+msgid "Perform save after search & replace is completed."
+msgstr "Sla op nadat zoeken en vervangen is voltooid."
+
+#. Close Modal
+msgid "Close Modal"
+msgstr "Venster Sluiten"
+
+#. Close modal after search & replace is completed.
+msgid "Close modal after search & replace is completed."
+msgstr "Sluit het venster nadat zoeken en vervangen is voltooid."
+
+#. Use Shortcut
+msgid "Use Shortcut"
+msgstr "Snelkoppeling Gebruiken"
+
+#. Enable Shortcut (CMD + F).
+msgid "Enable Shortcut (CMD + F)."
+msgstr "Snelkoppeling inschakelen (CMD + F)."
+
+#. Word Matching
+msgid "Word Matching"
+msgstr "Woordovereenkomst"
+
+#. Word Matching label
+msgid ""
+"Perform search & replace only for words which are not surrounded by any text"
+" or string."
+msgstr ""
+"Voer zoeken en vervangen alleen uit voor woorden die niet omgeven zijn door "
+"tekst of een tekenreeks."
+
+#. dist/app.js
+msgid "item(s) replaced successfully"
+msgstr "item(s) succesvol vervangen"
+
+#. dist/app.js
+msgid "Match case"
+msgstr "Hoofdlettergevoelig"
+
+#. dist/app.js
+msgid "Use regular expression"
+msgstr "Reguliere expressie gebruiken"

@@ -1,23 +1,26 @@
 {
-  "translation-revision-date": "2024-07-02 12:19+0100",
-  "generator": "WP-CLI\/2.6.0",
-  "source": "dist\/app.js",
+  "translation-revision-date": "2026-03-12 10:03+0100",
+  "generator": "WP-CLI/2.6.0",
+  "source": "dist/app.js",
   "domain": "messages",
   "locale_data": {
     "messages": {
       "": {
         "domain": "messages",
         "lang": "zh_CN",
-        "plural-forms": "nplurals=2; plural=(n != 1);"
+        "plural-forms": "nplurals=1; plural=0;"
       },
       "Search & Replace": [
-        "\u641c\u7d22\u548c\u66ff\u6362"
+        "搜索和替换"
       ],
       "item(s) replaced successfully": [
-        "\u5DF2\u6210\u529F\u66F4\u6362\u7684\u7269\u54C1"
+        "个项目替换成功"
       ],
-      "Match Case | Expression": [
-        "匹配案例 |表达"
+      "Match case": [
+        "区分大小写"
+      ],
+      "Use regular expression": [
+        "使用正则表达式"
       ]
     }
   }

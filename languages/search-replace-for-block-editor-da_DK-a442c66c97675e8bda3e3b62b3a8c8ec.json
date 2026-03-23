@@ -1,7 +1,7 @@
 {
-  "translation-revision-date": "2024-08-29 21:32+0100",
-  "generator": "WP-CLI\/2.6.0",
-  "source": "dist\/app.js",
+  "translation-revision-date": "2026-03-12 10:03+0100",
+  "generator": "WP-CLI/2.6.0",
+  "source": "dist/app.js",
   "domain": "messages",
   "locale_data": {
     "messages": {
@@ -11,13 +11,16 @@
         "plural-forms": "nplurals=2; plural=(n != 1);"
       },
       "Search & Replace": [
-        "S\u00f8g og erstat"
+        "Søg og Erstat"
       ],
       "item(s) replaced successfully": [
-        "vare(r) er blevet udskiftet"
+        "element(er) erstattet"
       ],
-      "Match Case | Expression": [
-        "Match Case | Udtryk"
+      "Match case": [
+        "Forskelssensitiv"
+      ],
+      "Use regular expression": [
+        "Brug regulære udtryk"
       ]
     }
   }

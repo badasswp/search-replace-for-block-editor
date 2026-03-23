@@ -1,7 +1,7 @@
 {
-  "translation-revision-date": "2024-07-02 12:11+0100",
-  "generator": "WP-CLI\/2.6.0",
-  "source": "dist\/app.js",
+  "translation-revision-date": "2026-03-12 10:03+0100",
+  "generator": "WP-CLI/2.6.0",
+  "source": "dist/app.js",
   "domain": "messages",
   "locale_data": {
     "messages": {
@@ -11,13 +11,16 @@
         "plural-forms": "nplurals=2; plural=(n != 1);"
       },
       "Search & Replace": [
-        "\u0916\u094b\u091c\u0947\u0902 \u0914\u0930 \u092c\u0926\u0932\u0947\u0902"
+        "खोजें और बदलें"
       ],
       "item(s) replaced successfully": [
-        "\u0906\u0907\u091F\u092E \u0938\u092B\u0932\u0924\u093E\u092A\u0942\u0930\u094D\u0935\u0915 \u092C\u0926\u0932\u0947 \u0917\u090F"
+        "आइटम सफलतापूर्वक बदले गए"
       ],
-      "Match Case | Expression": [
-        "मैच केस | अभिव्यक्"
+      "Match case": [
+        "केस का मिलान करें"
+      ],
+      "Use regular expression": [
+        "नियमित अभिव्यक्ति का उपयोग करें"
       ]
     }
   }
